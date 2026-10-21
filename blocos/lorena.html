@@ -1,0 +1,50 @@
+<section class="blk-lorena" id="equipe">
+  <div class="wrap blk-lorena__in">
+    <div class="blk-lorena__nome" data-reveal>
+      <p class="blk-lorena__eyebrow">Quem atende</p>
+      <h2 class="blk-lorena__titulo">Lorena Lima</h2>
+      <p class="blk-lorena__reg">Fisioterapeuta dermatofuncional · CREFITO 183075</p>
+    </div>
+    <div class="blk-lorena__texto" data-reveal style="--d:120ms">
+      <p data-acende>Fundou a Lorens em 2017 e segue à frente de cada protocolo. Quem faz a avaliação é quem aplica e quem acompanha o resultado nas sessões seguintes.</p>
+      <ul class="blk-lorena__lista">
+        <li><span class="blk-lorena__ic"><!--icone:olho--></span>Avalia a pele antes de indicar qualquer procedimento</li>
+        <li><span class="blk-lorena__ic"><!--icone:mao--></span>Aplica os oito procedimentos da casa</li>
+        <li><span class="blk-lorena__ic"><!--icone:agenda--></span>Acompanha a pele de uma sessão para a outra</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+.blk-lorena{
+  padding-block:var(--sp-section);
+  border-top:1px solid color-mix(in srgb,var(--ink) 10%,transparent);
+}
+.blk-lorena__in{display:grid;gap:var(--sp-4);align-items:start}
+@media (min-width:64rem){
+  .blk-lorena__in{grid-template-columns:1fr 1fr;gap:var(--sp-5);align-items:center}
+}
+.blk-lorena__eyebrow{
+  margin:0 0 var(--sp-2);font-family:var(--f-body);font-size:var(--t-label);
+  letter-spacing:var(--eyebrow-track);text-transform:uppercase;color:var(--pulse);
+}
+.blk-lorena__titulo{
+  margin:0;font-family:var(--f-display);font-weight:400;
+  font-size:clamp(3rem,9vw,6.5rem);line-height:1;color:var(--brand);
+}
+.blk-lorena__reg{
+  margin:var(--sp-2) 0 0;font-family:var(--f-body);font-size:var(--t-label);
+  letter-spacing:var(--eyebrow-track);text-transform:uppercase;color:color-mix(in srgb,var(--ink) 62%,transparent);
+}
+.blk-lorena__texto > p{margin:0;font-size:1.15em;color:var(--ink)}
+.blk-lorena__lista{list-style:none;margin:var(--sp-3) 0 0;padding:0;display:grid}
+.blk-lorena__lista li{
+  display:flex;gap:var(--sp-2);align-items:center;padding-block:var(--sp-2);
+  border-top:1px solid color-mix(in srgb,var(--ink) 12%,transparent);
+  color:color-mix(in srgb,var(--ink) 74%,transparent);
+}
+.blk-lorena__lista li:last-child{border-bottom:1px solid color-mix(in srgb,var(--ink) 12%,transparent)}
+.blk-lorena__ic{flex:none;display:inline-flex;width:1.8rem;height:1.8rem;color:var(--brand)}
+.blk-lorena__ic svg{width:100%;height:100%}
+</style>

@@ -1,0 +1,286 @@
+{
+  "slug": "lorens",
+  "negocio": {
+    "nome": "Lorens Estética Facial",
+    "whatsapp": "5548999307730",
+    "telefone": "(48) 99930-7730",
+    "logo": "brand/logo.png",
+    "unidades": [
+      {
+        "bairro": "Trindade · Florianópolis/SC",
+        "endereco": "Rua Lauro Linhares, 728, sala 207 · Centro Executivo Monchique",
+        "telefone": "(48) 99930-7730",
+        "horario": "Com hora marcada pelo WhatsApp"
+      }
+    ]
+  },
+  "marca": {
+    "brand": "#A16FAD",
+    "brand2": "#3A2440",
+    "ink": "#3F3343",
+    "bg": "#FBF9FA",
+    "pulse": "#1AAE88",
+    "radius": "2px",
+    "registro": "editorial",
+    "fontDisplay": "Poiret One",
+    "fontBody": "Jost",
+    "tomHero": "claro",
+    "tomCorpo": "claro"
+  },
+  "motivo": "camadas",
+  "secoes": [
+    {
+      "id": "header",
+      "variant": "sticky-cta",
+      "data": {
+        "links": [
+          {
+            "texto": "Tratamentos",
+            "href": "#tratamentos"
+          },
+          {
+            "texto": "Quiz da pele",
+            "href": "#quiz"
+          },
+          {
+            "texto": "Quem atende",
+            "href": "#equipe"
+          },
+          {
+            "texto": "Onde fica",
+            "href": "#unidades"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hero",
+      "variant": "split-motivo",
+      "data": {
+        "eyebrow": "Estética facial · Trindade, Florianópolis",
+        "h1": "Primeiro a pele. Depois o tratamento.",
+        "lead": "A Lorens cuida só do rosto: limpeza de pele por sucção, peelings, microagulhamento e toxina botulínica. Todo protocolo começa por uma avaliação com a fisioterapeuta dermatofuncional Lorena Lima.",
+        "cta": "Agendar avaliação",
+        "ctaSecundario": "Ver tratamentos",
+        "ctaSecundarioHref": "#tratamentos",
+        "selo": "Pele · Rosto · Trindade · Desde 2017 · ",
+        "cardTitulo": "Agende pelo WhatsApp",
+        "arte": "grao"
+      }
+    },
+    {
+      "id": "fita",
+      "data": {
+        "itens": [
+          "Limpeza de pele por sucção",
+          "Peeling de diamante",
+          "Peeling químico",
+          "Microagulhamento",
+          "Toxina botulínica",
+          "Bioestimulador de colágeno",
+          "Preenchimento labial",
+          "Harmonização facial"
+        ]
+      }
+    },
+    {
+      "id": "numeros",
+      "variant": "faixa",
+      "data": {
+        "titulo": "Quase dez anos de rosto, na mesma rua",
+        "itens": [
+          {
+            "valor": "4,9",
+            "rotulo": "nota no Google"
+          },
+          {
+            "valor": "206",
+            "rotulo": "avaliações de clientes",
+            "contar": 206
+          },
+          {
+            "valor": "2017",
+            "rotulo": "ano em que a Lorens abriu na Trindade"
+          },
+          {
+            "valor": "8",
+            "rotulo": "procedimentos, todos para o rosto",
+            "contar": 8
+          },
+          {
+            "valor": "22 mil",
+            "rotulo": "pessoas acompanham a Lorens no Instagram"
+          }
+        ]
+      }
+    },
+    {
+      "id": "manifesto",
+      "variant": "faixa",
+      "data": {
+        "eyebrow": "Por que só o rosto",
+        "citacao": "Quem faz de tudo um pouco olha a pele de passagem. Aqui ela é o assunto inteiro da consulta.",
+        "texto": [
+          "A Lorens abriu em 2017 com uma decisão que até hoje define a agenda: não ser salão, não ter cardápio de serviços para o corpo todo. Só estética facial e dermatofuncional.",
+          "Na prática, isso quer dizer que a mesma profissional avalia, monta o protocolo e acompanha o resultado. Pele oleosa, manchas de sol, linhas de expressão ou flacidez começam pela mesma pergunta: o que essa pele precisa agora."
+        ]
+      }
+    },
+    {
+      "id": "tratamentos",
+      "variant": "pilha",
+      "data": {
+        "titulo": "Oito procedimentos, um assunto só",
+        "lead": "A indicação sai da avaliação. Número de sessões e intervalo entre elas dependem da sua pele.",
+        "itens": [
+          {
+            "nome": "Limpeza de pele por sucção",
+            "descricao": "Desobstrui os poros e tira cravos e impurezas com sucção mecânica. É o ponto de partida da maioria dos protocolos e o tratamento que dá nome à casa.",
+            "icone": "pele"
+          },
+          {
+            "nome": "Peeling de diamante",
+            "descricao": "Esfoliação mecânica da camada mais superficial. Deixa a textura mais uniforme e a pele com mais viço.",
+            "icone": "estrela"
+          },
+          {
+            "nome": "Peeling químico",
+            "descricao": "Ácidos escolhidos para o seu caso aceleram a renovação da pele e tratam marcas, oleosidade e textura irregular.",
+            "icone": "gota"
+          },
+          {
+            "nome": "Microagulhamento",
+            "descricao": "Com dermaroller ou dermapen, estimula colágeno para cicatriz de acne, poros dilatados e firmeza.",
+            "icone": "seringa"
+          },
+          {
+            "nome": "Toxina botulínica",
+            "descricao": "Suaviza linhas de expressão e, quando indicado, relaxa o masseter, o que alivia o apertar de dentes e afina o contorno.",
+            "icone": "rosto"
+          },
+          {
+            "nome": "Bioestimulador de colágeno",
+            "descricao": "Estimula o colágeno da própria pele ao longo dos meses. A firmeza vem aos poucos, sem mudar seus traços.",
+            "icone": "molecula"
+          },
+          {
+            "nome": "Preenchimento labial",
+            "descricao": "Ácido hialurônico para hidratar, contornar e equilibrar o volume dos lábios, com a quantidade definida na avaliação.",
+            "icone": "mulher"
+          },
+          {
+            "nome": "Harmonização facial",
+            "descricao": "Pequenos ajustes de volume e contorno para equilibrar as proporções do rosto, planejados um a um.",
+            "icone": "check"
+          }
+        ]
+      }
+    },
+    {
+      "custom": "blocos/quiz.html"
+    },
+    {
+      "id": "passos",
+      "variant": "timeline",
+      "data": {
+        "titulo": "Como é a primeira vez",
+        "itens": [
+          {
+            "titulo": "Você chama no WhatsApp",
+            "texto": "Conta o que incomoda e escolhe um horário. O atendimento é só com hora marcada.",
+            "icone": "conversa"
+          },
+          {
+            "titulo": "Avaliação da pele",
+            "texto": "Antes de qualquer procedimento, a Lorena examina a pele e conversa sobre rotina, sol e histórico.",
+            "icone": "olho"
+          },
+          {
+            "titulo": "Protocolo no papel",
+            "texto": "Você sai sabendo o que fazer, em que ordem e quantas sessões a sua pele pede.",
+            "icone": "agenda"
+          },
+          {
+            "titulo": "Sessões e retorno",
+            "texto": "Você volta no intervalo que o protocolo pede, e cada retorno parte do que a pele mostrou na sessão anterior.",
+            "icone": "check"
+          }
+        ]
+      }
+    },
+    {
+      "custom": "blocos/ciclo.html"
+    },
+    {
+      "custom": "blocos/lorena.html"
+    },
+    {
+      "id": "faq",
+      "variant": "colunas",
+      "data": {
+        "titulo": "Antes de marcar",
+        "itens": [
+          {
+            "p": "Preciso de avaliação antes do procedimento?",
+            "r": "Sim. Todo atendimento começa olhando a pele. É na avaliação que se decide o tratamento, o número de sessões e o intervalo entre elas."
+          },
+          {
+            "p": "Limpeza de pele dói?",
+            "r": "A extração pode incomodar em áreas mais sensíveis, como nariz e queixo. A sucção mecânica deixa o processo mais rápido, e a sessão é ajustada ao que a sua pele aguenta."
+          },
+          {
+            "p": "Quanto tempo dura o efeito da toxina?",
+            "r": "Em geral, a melhor fase vai de quatro a oito semanas depois da aplicação, e o efeito começa a acabar perto das doze semanas. Por isso vale marcar o retorno com antecedência."
+          },
+          {
+            "p": "Quem faz os procedimentos?",
+            "r": "A Lorena Lima, fisioterapeuta dermatofuncional (CREFITO 183075), fundadora da clínica e responsável técnica por todos os protocolos."
+          },
+          {
+            "p": "Atende sem hora marcada?",
+            "r": "Não. A agenda é organizada pelo WhatsApp, (48) 99930-7730, para cada pessoa ter o tempo que a avaliação pede."
+          },
+          {
+            "p": "Onde fica a clínica?",
+            "r": "Na Rua Lauro Linhares, 728, sala 207, no Centro Executivo Monchique, na Trindade."
+          }
+        ]
+      }
+    },
+    {
+      "id": "unidades",
+      "variant": "unica",
+      "data": {
+        "titulo": "Na Trindade, na Lauro Linhares"
+      }
+    },
+    {
+      "id": "cta-final",
+      "variant": "bloco-cheio",
+      "data": {
+        "h2": "Conte o que está incomodando na sua pele",
+        "lead": "A primeira conversa é pelo WhatsApp. Dali sai o horário da sua avaliação.",
+        "cta": "Chamar a Lorens"
+      }
+    },
+    {
+      "id": "footer",
+      "variant": "assinatura",
+      "data": {
+        "links": [
+          {
+            "texto": "Instagram",
+            "href": "https://www.instagram.com/lorensestetica/"
+          },
+          {
+            "texto": "Quiz da pele",
+            "href": "https://skincarevip.com.br/"
+          }
+        ]
+      }
+    }
+  ],
+  "wow": {
+    "assinatura": "gradient-mesh"
+  }
+}

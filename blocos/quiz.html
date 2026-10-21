@@ -1,0 +1,57 @@
+<section class="blk-quiz" id="quiz">
+  <div class="wrap blk-quiz__in">
+    <div class="blk-quiz__cab" data-reveal>
+      <p class="blk-quiz__eyebrow">SkinCareVIP · by Lorens</p>
+      <h2 class="blk-quiz__titulo">Antes de marcar, descubra que pele é a sua</h2>
+      <p class="blk-quiz__lead">Muita gente trata a pele que acha que tem. O quiz da Lorens são 22 perguntas em cinco partes, cerca de dez minutos, e no fim você recebe um dossiê com o seu tipo de pele e a rotina que faz sentido para ele.</p>
+      <a class="blk-quiz__cta" href="https://skincarevip.com.br/" target="_blank" rel="noopener">Fazer o quiz</a>
+    </div>
+    <ol class="blk-quiz__eixos">
+      <li data-reveal style="--d:0ms"><span class="blk-quiz__n">01</span><span class="blk-quiz__ic"><!--icone:gota--></span><strong>Oleosidade</strong><em>quanto e onde a pele brilha</em></li>
+      <li data-reveal style="--d:80ms"><span class="blk-quiz__n">02</span><span class="blk-quiz__ic"><!--icone:folha--></span><strong>Sensibilidade</strong><em>o que arde, o que avermelha</em></li>
+      <li data-reveal style="--d:160ms"><span class="blk-quiz__n">03</span><span class="blk-quiz__ic"><!--icone:sol--></span><strong>Pigmentação</strong><em>manchas e marcas de sol</em></li>
+      <li data-reveal style="--d:240ms"><span class="blk-quiz__n">04</span><span class="blk-quiz__ic"><!--icone:rosto--></span><strong>Rugas</strong><em>linhas finas e de expressão</em></li>
+      <li data-reveal style="--d:320ms"><span class="blk-quiz__n">05</span><span class="blk-quiz__ic"><!--icone:molecula--></span><strong>Hidratação</strong><em>o que a pele retém ao longo do dia</em></li>
+    </ol>
+  </div>
+</section>
+
+<style>
+.blk-quiz{
+  padding-block:var(--sp-section);
+  background:color-mix(in srgb,var(--brand) 9%,var(--bg));
+}
+.blk-quiz__in{display:grid;gap:var(--sp-4);align-items:start}
+@media (min-width:64rem){
+  .blk-quiz__in{grid-template-columns:.95fr 1.05fr;gap:var(--sp-5);align-items:center}
+}
+.blk-quiz__eyebrow{
+  margin:0 0 var(--sp-2);font-family:var(--f-body);font-size:var(--t-label);
+  letter-spacing:var(--eyebrow-track);text-transform:uppercase;color:var(--pulse);
+}
+.blk-quiz__titulo{
+  margin:0;font-family:var(--f-display);font-size:var(--t-h2);
+  line-height:var(--lh-display);text-wrap:balance;color:var(--ink);
+}
+.blk-quiz__lead{margin:var(--sp-3) 0 0;max-width:34rem;color:color-mix(in srgb,var(--ink) 74%,transparent)}
+.blk-quiz__cta{
+  display:inline-block;margin-top:var(--sp-3);padding:.95em 1.6em;
+  background:var(--brand);border-radius:var(--radius);
+  font-family:var(--f-body);font-size:var(--t-label);letter-spacing:var(--eyebrow-track);
+  text-transform:uppercase;text-decoration:none;color:var(--bg);
+  transition:background .2s;
+}
+.blk-quiz__cta:hover{background:var(--brand-2)}
+.blk-quiz__eixos{list-style:none;margin:0;padding:0;display:grid;gap:var(--sp-2)}
+.blk-quiz__eixos li{
+  display:grid;grid-template-columns:auto auto 1fr;column-gap:var(--sp-2);align-items:center;
+  padding:var(--sp-2) var(--sp-3);
+  background:var(--bg);border-radius:var(--radius);
+  border:1px solid color-mix(in srgb,var(--brand) 22%,transparent);
+}
+.blk-quiz__n{font-family:var(--f-body);font-size:var(--t-label);letter-spacing:var(--eyebrow-track);color:color-mix(in srgb,var(--ink) 50%,transparent)}
+.blk-quiz__ic{display:inline-flex;width:2.2rem;height:2.2rem;color:var(--brand)}
+.blk-quiz__ic svg{width:100%;height:100%}
+.blk-quiz__eixos strong{font-family:var(--f-display);font-size:1.45em;font-weight:400;line-height:1.15;color:var(--ink)}
+.blk-quiz__eixos em{grid-column:3;font-style:normal;font-size:.92em;color:color-mix(in srgb,var(--ink) 64%,transparent)}
+</style>

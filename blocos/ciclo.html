@@ -1,0 +1,54 @@
+<section class="blk-ciclo" id="ciclo">
+  <div class="wrap">
+    <div class="blk-ciclo__cab" data-reveal>
+      <p class="blk-ciclo__eyebrow">Toxina botulínica</p>
+      <h2 class="blk-ciclo__titulo">O efeito tem calendário. O retorno também.</h2>
+      <p class="blk-ciclo__lead" data-acende>A toxina não age no dia e não dura para sempre. Saber em que semana você está ajuda a marcar a próxima aplicação antes de o movimento voltar por inteiro.</p>
+    </div>
+    <ol class="blk-ciclo__marcos">
+      <li data-reveal style="--d:0ms"><span class="blk-ciclo__quando">Dia 0</span><strong>Aplicação</strong><p>Nada muda no espelho ainda. O efeito começa a aparecer aos poucos nos dias seguintes.</p></li>
+      <li data-reveal style="--d:100ms"><span class="blk-ciclo__quando">2 semanas</span><strong>Efeito no auge</strong><p>É quando o músculo está mais relaxado e a expressão fica mais contida.</p></li>
+      <li data-reveal style="--d:200ms"><span class="blk-ciclo__quando">4 a 8 semanas</span><strong>Melhor fase</strong><p>O rosto acomoda o resultado e o movimento fica natural.</p></li>
+      <li data-reveal style="--d:300ms"><span class="blk-ciclo__quando">~12 semanas</span><strong>Hora de voltar</strong><p>O efeito vai acabando aos poucos. É aqui que vale ter o retorno já agendado.</p></li>
+    </ol>
+  </div>
+</section>
+
+<style>
+.blk-ciclo{padding-block:var(--sp-section)}
+.blk-ciclo__cab{max-width:44rem}
+.blk-ciclo__eyebrow{
+  margin:0 0 var(--sp-2);font-family:var(--f-body);font-size:var(--t-label);
+  letter-spacing:var(--eyebrow-track);text-transform:uppercase;color:var(--brand-2);
+}
+.blk-ciclo__titulo{
+  margin:0;font-family:var(--f-display);font-size:var(--t-h2);
+  line-height:var(--lh-display);text-wrap:balance;color:var(--ink);
+}
+.blk-ciclo__lead{margin:var(--sp-3) 0 0;color:color-mix(in srgb,var(--ink) 74%,transparent)}
+.blk-ciclo__marcos{
+  list-style:none;margin:var(--sp-5) 0 0;padding:0;display:grid;gap:var(--sp-4);
+  counter-reset:marco;
+}
+@media (min-width:48rem){.blk-ciclo__marcos{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:64rem){.blk-ciclo__marcos{grid-template-columns:repeat(4,1fr);gap:var(--sp-4)}}
+.blk-ciclo__marcos li{
+  position:relative;padding-top:var(--sp-3);
+  border-top:2px solid color-mix(in srgb,var(--brand) 35%,transparent);
+}
+.blk-ciclo__marcos li::before{
+  content:"";position:absolute;top:-.45rem;left:0;width:.8rem;height:.8rem;border-radius:50%;
+  background:var(--brand);
+}
+.blk-ciclo__marcos li:last-child{border-top-color:var(--pulse)}
+.blk-ciclo__marcos li:last-child::before{background:var(--pulse)}
+.blk-ciclo__quando{
+  display:block;font-family:var(--f-body);font-size:var(--t-label);
+  letter-spacing:var(--eyebrow-track);text-transform:uppercase;color:color-mix(in srgb,var(--ink) 55%,transparent);
+}
+.blk-ciclo__marcos strong{
+  display:block;margin-top:var(--sp-1);font-family:var(--f-display);font-size:1.6em;font-weight:400;
+  line-height:1.15;color:var(--ink);
+}
+.blk-ciclo__marcos p{margin:var(--sp-1) 0 0;color:color-mix(in srgb,var(--ink) 70%,transparent)}
+</style>
