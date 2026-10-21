@@ -1,0 +1,1248 @@
+<!doctype html>
+<html lang="pt-BR" class="registro-editorial">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Lorens Estética Facial</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poiret+One:wght@400;500;600&amp;family=Jost:wght@400;500;600&amp;display=swap">
+<style>/* Padrões neutros do kit. A proposta sobrescreve pelo bloco injetado
+   pelo build.mjs, que vem depois deste arquivo no CSS final. */
+:root{
+  --brand:#0a7d6b;
+  --brand-2:#064e42;
+  --ink:#111634;
+  /* Derivados de --ink, não fixos: a marca define o ink e todo o texto
+     secundário e as réguas acompanham. Fixá-los prendia a página inteira ao
+     azul do padrão clínico, mesmo numa paleta quente. Mesmas proporções que
+     os valores literais que estavam aqui, e o mesmo color-mix já usado pela
+     família --on-dark-*. */
+  --ink-soft:color-mix(in srgb, var(--ink) 76%, var(--bg));
+  --ink-dim:color-mix(in srgb, var(--ink) 52%, var(--bg));
+  --bg:#F6F7F9;
+  --bg-2:#FFFFFF;
+  --line:color-mix(in srgb, var(--ink) 14%, transparent);
+  --line-strong:color-mix(in srgb, var(--ink) 26%, transparent);
+  --pulse:#DC5648;
+
+  --f-display:Georgia,'Times New Roman',serif;
+  --f-body:-apple-system,system-ui,sans-serif;
+
+  --t-hero:clamp(2.65rem,1.6rem + 4.6vw,5.1rem);
+  --t-h2:clamp(1.85rem,1.3rem + 2.2vw,3rem);
+  --t-h3:clamp(1.15rem,1.05rem + .4vw,1.4rem);
+  --t-lead:clamp(1.03rem,.98rem + .35vw,1.2rem);
+  --t-sm:.94rem;
+  --t-label:.71rem;
+
+  --wrap:1180px;
+  --wrap-narrow:760px;
+  --gutter:clamp(1.15rem,4vw,2.5rem);
+  --sp-1:.5rem; --sp-2:.85rem; --sp-3:1.4rem; --sp-4:2.2rem; --sp-5:3.4rem;
+  --sp-section:clamp(4.5rem,3.2rem + 5.5vw,7.5rem);
+
+  --r:6px;
+  --r-lg:14px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+
+  /* Superfícies escuras: qualquer seção pode se comprometer com um campo
+     saturado sem que a proposta precise declarar uma cor a mais. --ink já
+     é obrigatório e, por definição, escuro o bastante para texto sobre
+     --bg — então serve de --surface-dark em qualquer paleta de marca.
+     Tudo aqui deriva dos mesmos seis tokens de marca via color-mix. */
+  --surface-dark:var(--ink);
+  --surface-dark-2:color-mix(in srgb, var(--bg-2) 8%, var(--ink));
+  --on-dark:var(--bg-2);
+  --on-dark-soft:color-mix(in srgb, var(--bg-2) 74%, transparent);
+  --on-dark-dim:color-mix(in srgb, var(--bg-2) 52%, transparent);
+  --on-dark-line:color-mix(in srgb, var(--bg-2) 16%, transparent);
+  --on-dark-line-strong:color-mix(in srgb, var(--bg-2) 30%, transparent);
+}
+
+/* Ritmo por registro. O :root acima traz os valores clínicos como padrão —
+   estes blocos só os substituem. Nenhuma cor aqui: registro é ritmo, não
+   paleta; a paleta continua vindo inteira de marca.*. */
+:root{
+  --lh-display:1.08;
+  --lh-body:1.6;
+  --lh-h3:1.25;
+  --eyebrow-track:.16em;
+}
+.registro-editorial{
+  --t-hero:clamp(3rem,2rem + 6vw,6.5rem);
+  --t-h2:clamp(2.1rem,1.5rem + 3vw,3.8rem);
+  --lh-display:1.02;
+  --lh-body:1.75;
+  --lh-h3:1.18;
+  --eyebrow-track:.34em;
+  --wrap-narrow:640px;
+  --sp-section:clamp(6.5rem,4.5rem + 8vw,12rem);
+}
+
+/* Página escura: cliente cujo site é escuro. A marca chega com --bg escuro e
+   --ink claro (o extrator lê assim), então os tokens que assumiam "bg claro,
+   ink escuro" se invertem aqui: --bg-2 deixa de ser o branco das superfícies
+   e vira um degrau acima do fundo; superfície escura vira um degrau abaixo;
+   o texto sobre ela continua sendo o ink. Nenhuma cor nova a declarar. */
+.pagina-escura{
+  --bg-2:color-mix(in srgb, var(--bg) 90%, var(--ink));
+  --surface-dark:color-mix(in srgb, var(--bg) 70%, #000);
+  --surface-dark-2:color-mix(in srgb, var(--bg) 84%, var(--ink));
+  --on-dark:var(--ink);
+  --on-dark-soft:color-mix(in srgb, var(--ink) 74%, transparent);
+  --on-dark-dim:color-mix(in srgb, var(--ink) 52%, transparent);
+  --on-dark-line:color-mix(in srgb, var(--ink) 16%, transparent);
+  --on-dark-line-strong:color-mix(in srgb, var(--ink) 30%, transparent);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+*{margin:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  background:var(--bg);color:var(--ink);
+  font-family:var(--f-body);font-size:1rem;line-height:var(--lh-body);
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+img,svg,video{display:block;max-width:100%}
+button,input,select,textarea{font:inherit;color:inherit}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--brand);outline-offset:3px;border-radius:3px}
+
+.wrap{width:100%;max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gutter)}
+.wrap--narrow{max-width:var(--wrap-narrow)}
+.section{padding-block:var(--sp-section)}
+.section--tight{padding-block:var(--sp-5)}
+.grid{display:grid;gap:var(--sp-3)}
+.grid--2{grid-template-columns:repeat(auto-fit,minmax(min(100%,20rem),1fr))}
+.grid--3{grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr))}
+.stack>*+*{margin-top:var(--sp-2)}
+.cluster{display:flex;flex-wrap:wrap;gap:var(--sp-2);align-items:center}
+
+/* Divisor entre seções, genérico para qualquer motivo: um <div class="rule">
+   envolvendo o <svg> de uma escala "rule". Cada motivo só estiliza o miolo
+   (o <svg>/<path> em si) no seu próprio motif.css. */
+.rule{
+  position:relative;height:1px;background:var(--line);
+  max-width:var(--wrap);margin-inline:auto;
+}
+.rule svg{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:104px;height:46px;
+  background:var(--bg);padding-inline:10px;
+}
+
+.js [data-reveal]{
+  opacity:0;transform:translateY(18px);
+  transition:opacity .8s var(--ease) var(--d,0ms),transform .8s var(--ease) var(--d,0ms);
+}
+.js [data-reveal].is-in{opacity:1;transform:none}
+[data-tilt]{transition:transform .35s var(--ease);will-change:transform}
+[data-glow]{position:relative;isolation:isolate}
+[data-glow]::before{
+  content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;
+  border-radius:inherit;opacity:.5;
+  background:radial-gradient(
+    18rem circle at var(--gx,50%) var(--gy,50%),
+    color-mix(in srgb, var(--brand) 22%, transparent), transparent 65%);
+}
+@media (prefers-reduced-motion:reduce){
+  .js [data-reveal]{opacity:1;transform:none;transition:none}
+  [data-tilt]{transition:none}
+}
+
+/* Título que sobe palavra por palavra (motion.js quebra em .w). */
+.js [data-palavras] .w{
+  display:inline-block;opacity:0;transform:translateY(.45em);
+  animation:palavra-sobe .9s var(--ease) forwards;
+  animation-delay:calc(var(--d,0ms) + var(--i,0) * 70ms);
+}
+@keyframes palavra-sobe{to{opacity:1;transform:none}}
+
+/* Texto que acende com a rolagem (motion.js quebra em .p e liga .on). */
+[data-acende] .p{opacity:.16;transition:opacity .35s var(--ease)}
+[data-acende] .p.on{opacity:1}
+
+/* Cartões que empilham: cada um gruda um degrau abaixo do anterior; o
+   motion.js encolhe o de baixo quando o próximo encosta. */
+[data-pilha]>*{
+  position:sticky;top:calc(4.5rem + var(--n,0) * .75rem);
+  transform-origin:top center;will-change:transform;
+}
+
+/* Foto do cliente (ctx.foto): véu suave na cor da marca para fotos de origens
+   diferentes lerem como uma série, e revelação de cima para baixo no scroll. */
+.foto{position:relative;margin:0;overflow:hidden;border-radius:var(--r-lg);background:var(--bg-2);isolation:isolate}
+.foto img{display:block;width:100%;height:100%;object-fit:cover}
+.foto::after{
+  content:'';position:absolute;inset:0;pointer-events:none;mix-blend-mode:multiply;
+  background:linear-gradient(160deg, color-mix(in srgb, var(--brand) 16%, transparent), transparent 55%, color-mix(in srgb, var(--brand-2) 20%, transparent));
+}
+/* O recorte fica na img, nunca na figura observada: o IntersectionObserver
+   do Chromium respeita o clip-path do próprio alvo, e uma figura recortada a
+   zero nunca "entra" na tela — a foto ficaria escondida para sempre. */
+.js .foto[data-revela] img{
+  clip-path:inset(0 0 100% 0);transform:scale(1.12);
+  transition:clip-path 1.1s var(--ease),transform 1.8s var(--ease);
+}
+.js .foto[data-revela].is-in img{clip-path:inset(0);transform:none}
+@media (prefers-reduced-motion:reduce){
+  .js .foto[data-revela] img{clip-path:none;transform:none;transition:none}
+}
+
+h1,h2,h3{font-family:var(--f-display);font-weight:500;line-height:var(--lh-display);letter-spacing:-.02em}
+h1{font-size:var(--t-hero)}
+h2{font-size:var(--t-h2)}
+h3{font-size:var(--t-h3);line-height:var(--lh-h3)}
+.lead{font-size:var(--t-lead);color:var(--ink-soft);max-width:52ch;line-height:var(--lh-body)}
+.eyebrow{
+  font-size:var(--t-label);letter-spacing:var(--eyebrow-track);text-transform:uppercase;
+  color:var(--ink-dim);font-weight:600;
+}
+.small{font-size:var(--t-sm);color:var(--ink-soft)}
+
+.btn{
+  display:inline-flex;align-items:center;gap:.55rem;
+  padding:.85rem 1.5rem;border-radius:var(--r);border:1px solid transparent;
+  background:var(--brand);color:var(--on-brand);
+  font-weight:600;text-decoration:none;cursor:pointer;
+  transition:transform .25s var(--ease),background .25s var(--ease);
+}
+.btn:hover{background:var(--brand-2);transform:translateY(-2px)}
+.btn--ghost{background:transparent;color:var(--brand);border-color:var(--line-strong)}
+.btn--ghost:hover{background:var(--bg-2);color:var(--brand-2)}
+.chip{
+  display:inline-flex;align-items:center;gap:.4rem;
+  padding:.35rem .8rem;border-radius:999px;border:1px solid var(--line);
+  font-size:var(--t-sm);color:var(--ink-soft);background:var(--bg-2);
+}
+@media (prefers-reduced-motion:reduce){
+  .btn{transition:none}
+  .btn:hover{transform:none}
+}
+
+/* Barra de WhatsApp do celular. O build sempre emite; só existe abaixo de
+   48rem, e o motion.js decide quando ela sobe. */
+.barra-zap{
+  position:fixed;left:.75rem;right:.75rem;bottom:max(.75rem, env(safe-area-inset-bottom));z-index:20;
+  transform:translateY(160%);transition:transform .5s var(--ease);
+}
+.barra-zap.on{transform:none}
+.barra-zap .btn{
+  width:100%;justify-content:center;padding-block:1rem;
+  box-shadow:0 12px 30px -12px color-mix(in srgb, var(--ink) 55%, transparent);
+}
+@media (min-width:48.01rem){ .barra-zap{display:none} }
+@media (prefers-reduced-motion:reduce){ .barra-zap{transition:none} }
+
+/* Ícones de saúde (lib/icones-saude.mjs): traço na cor do texto, tamanho
+   pelo contexto. */
+.ico-saude{display:inline-block;width:1.5em;height:1.5em;flex:none;vertical-align:middle}
+
+/* Camadas de pele. Nenhuma cor literal: tudo deriva de --pulse e --brand. */
+.camadas{display:block;width:100%;height:auto;overflow:visible}
+.camadas path{
+  fill:color-mix(in srgb, var(--pulse) 16%, transparent);
+  stroke:color-mix(in srgb, var(--pulse) 42%, transparent);
+  stroke-width:1;
+  vector-effect:non-scaling-stroke;
+}
+.camadas path:nth-child(even){fill:color-mix(in srgb, var(--brand) 14%, transparent)}
+
+.camadas--hero{height:clamp(120px,20vw,240px)}
+.camadas--accent{width:72px;height:26px;display:inline-block;vertical-align:middle}
+
+/* Cada camada sobe com atraso próprio, de baixo para cima. */
+.js .camadas--anima path{
+  opacity:0;
+  transform:translateY(14px);
+  animation:camadas-sobe .9s var(--ease) forwards;
+  animation-delay:calc(var(--i,0) * 110ms + 250ms);
+}
+@keyframes camadas-sobe{to{opacity:1;transform:none}}
+
+@media (prefers-reduced-motion: reduce){
+  .js .camadas--anima path{opacity:1;transform:none;animation:none}
+}
+
+/* As manchas saem das cores de marca — nunca cor literal. Cada uma é
+   clareada em direção a --bg-2 (o token de "branco" da própria proposta,
+   nunca a palavra reservada) antes de pintar: sobre um campo escuro isso
+   lê como brilho; sobre um campo claro seguem discretas o bastante para
+   não empastar num barro cinza-lavanda. */
+.mesh{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;filter:blur(78px)}
+.mesh__b{position:absolute;border-radius:50%;opacity:.4}
+.mesh__b--1{
+  width:46vmax;height:46vmax;top:-14vmax;left:-10vmax;
+  background:color-mix(in srgb, var(--brand) 55%, var(--bg-2));
+  animation:mesh-1 28s var(--ease) infinite alternate;
+}
+.mesh__b--2{
+  width:38vmax;height:38vmax;top:22vmax;right:-12vmax;
+  background:color-mix(in srgb, var(--brand-2) 55%, var(--bg-2));
+  animation:mesh-2 34s var(--ease) infinite alternate;
+}
+.mesh__b--3{
+  width:30vmax;height:30vmax;bottom:-10vmax;left:28vmax;
+  background:var(--pulse);opacity:.26;
+  animation:mesh-3 40s var(--ease) infinite alternate;
+}
+@keyframes mesh-1{to{transform:translate3d(14vmax,10vmax,0) scale(1.18)}}
+@keyframes mesh-2{to{transform:translate3d(-12vmax,-8vmax,0) scale(1.12)}}
+@keyframes mesh-3{to{transform:translate3d(8vmax,-14vmax,0) scale(1.22)}}
+
+/* O conteúdo tem de ficar acima do fundo. .rule é o divisor de seções que
+   um motivo emite (função rule() do motivo) — um <div> solto, filho direto
+   do body, fora da lista de tags acima; sem ele aqui ficaria atrás do mesh. */
+body>header,body>section,body>main,body>footer,body>.rule{position:relative;z-index:1}
+
+@media (prefers-reduced-motion: reduce){
+  .mesh__b{animation:none}
+}
+
+.grao{position:absolute;inset:0;pointer-events:none;opacity:.055;mix-blend-mode:multiply}
+.grao--forte{opacity:.11}
+.grao svg{display:block;width:100%;height:100%}
+
+.hd{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--line)}
+.hd__in{display:flex;align-items:center;gap:var(--sp-3);min-height:4.25rem}
+.hd__marca{font-family:var(--f-display);font-size:1.15rem;text-decoration:none;letter-spacing:-.01em;display:flex;align-items:center}
+.hd__logo{max-height:2.4rem;width:auto}
+.hd__nav{display:none;gap:var(--sp-3);margin-left:auto;font-size:var(--t-sm)}
+.hd__nav a{text-decoration:none;color:var(--ink-soft)}
+.hd__nav a:hover{color:var(--brand)}
+.hd__cta{margin-left:auto;padding:.55rem 1.1rem}
+.hd__nav:not(:empty)~.hd__cta{margin-left:0}
+@media (min-width:56rem){.hd__nav{display:flex}}
+
+.hero{position:relative;padding-block:var(--sp-section) 0;overflow:hidden}
+.hero__in{position:relative;z-index:2;max-width:var(--wrap-narrow)}
+.hero--split-motivo .hero__in{max-width:var(--wrap)}
+.hero h1{margin-top:var(--sp-2)}
+.hero .lead{margin-top:var(--sp-3)}
+.hero__acoes{margin-top:var(--sp-4)}
+.hero__acoes .btn .ico{margin-right:-.2rem}
+
+.hero--full-bleed .hero__in{max-width:var(--wrap);text-align:center;margin-inline:auto}
+.hero--full-bleed .hero__acoes{justify-content:center}
+
+/* Campo escuro: o hero se compromete com um fundo saturado, derivado só
+   dos tokens de marca (ver --surface-dark em tokens.css). A opacidade
+   deixa o gradient-mesh, se houver, passar como um véu de cor por trás em
+   vez de ficar tapado — é isso que o faz ler como luminoso, não barrento. */
+.hero--tom-escuro{
+  background:color-mix(in srgb, var(--surface-dark) 80%, transparent);
+  color:var(--on-dark);
+}
+.hero--tom-escuro .lead{color:var(--on-dark-soft)}
+.hero--tom-escuro .eyebrow{color:var(--acento-escuro)}
+.hero--tom-escuro .btn{background:var(--pulse);color:var(--on-pulse)}
+.hero--tom-escuro .btn:hover{background:color-mix(in srgb, var(--pulse) 78%, var(--ink))}
+.hero--tom-escuro .btn--ghost{background:transparent;color:var(--on-dark);border-color:var(--on-dark-line-strong)}
+.hero--tom-escuro .btn--ghost:hover{background:var(--on-dark-line);color:var(--on-dark)}
+
+/* split-motivo de fato divide: conteúdo à esquerda, card de contato
+   opcional à direita. Empilha sozinho abaixo de 64rem porque o card é o
+   segundo item do grid — a ordem do DOM já resolve o mobile. */
+.hero__grid{display:grid;gap:var(--sp-5);align-items:start}
+.hero__conteudo{max-width:var(--wrap-narrow)}
+@media (min-width:64rem){
+  .hero__grid{grid-template-columns:minmax(0,1fr) minmax(18rem,23rem)}
+}
+
+.hero__card{
+  padding:var(--sp-4);border-radius:var(--r-lg);
+  background:var(--surface-dark-2);border:1px solid var(--on-dark-line);
+}
+.hero__card .eyebrow{color:var(--on-dark-dim)}
+.hero__card-titulo{font-family:var(--f-display);font-size:var(--t-h3);margin-top:var(--sp-1);color:var(--on-dark)}
+.hero__card-cta{width:100%;justify-content:center;margin-top:var(--sp-3)}
+.hero__card-lista{margin-top:var(--sp-3);padding-top:var(--sp-3);border-top:1px solid var(--on-dark-line)}
+.hero__card-linha{display:flex;justify-content:space-between;gap:var(--sp-2);font-size:var(--t-sm)}
+.hero__card-linha+.hero__card-linha{margin-top:.5rem}
+.hero__card-linha dt{color:var(--on-dark-dim)}
+.hero__card-linha dd{color:var(--on-dark);font-weight:600;text-align:right}
+
+/* Traçado do motivo: faixa em fluxo normal, em espaço que o próprio hero
+   reserva — nunca mais absoluta sobre o parágrafo e os botões. */
+.hero__arte{
+  position:relative;z-index:1;
+  margin-top:clamp(2.75rem,6vw,4.5rem);
+  padding-block:var(--sp-4);
+  opacity:.85;pointer-events:none;
+}
+.hero--full-bleed .hero__arte{
+  position:absolute;inset:0;z-index:1;display:grid;place-items:center;
+  margin:0;padding:0;opacity:.14;
+}
+
+/* Retrato opcional do hero (data.imagem). Divide a coluna lateral com o card
+   de contato; sem imagem, .hero__lado só contém o card e nada muda. */
+.hero__lado{display:grid;gap:var(--sp-3)}
+.hero__retrato{
+  margin:0;overflow:hidden;border-radius:var(--r-lg);
+  background:var(--bg-2);aspect-ratio:1/1;
+  box-shadow:0 18px 50px -22px color-mix(in srgb, var(--ink) 45%, transparent);
+}
+.hero__retrato img{width:100%;height:100%;object-fit:cover;object-position:38% 28%;display:block}
+@media (min-width:64rem){ .hero__retrato{aspect-ratio:4/5} }
+
+/* Selo giratório (data.selo). */
+.hero__selo{
+  position:absolute;z-index:3;top:calc(var(--sp-section) * .55);right:var(--gutter);
+  width:6.5rem;height:6.5rem;pointer-events:none;
+  animation:selo-gira 22s linear infinite;
+}
+.hero__selo svg{width:100%;height:100%;overflow:visible}
+.hero__selo text{font-family:var(--f-body);font-size:8.6px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;fill:currentColor}
+.hero__selo-miolo{position:absolute;inset:0;display:grid;place-items:center;font-size:1.5rem;color:var(--pulse);animation:selo-gira 22s linear infinite reverse}
+@keyframes selo-gira{to{transform:rotate(360deg)}}
+@media (min-width:64rem){ .hero__selo{width:8.5rem;height:8.5rem} }
+@media (prefers-reduced-motion:reduce){ .hero__selo,.hero__selo-miolo{animation:none} }
+
+/* Fundo estático do hero: o que fica quando o wow do hero não pode rodar
+   (sem WebGL, cena do Spline que falhou). Mesmas cores, sem movimento. */
+.hero--estatico{
+  background:
+    radial-gradient(60% 50% at 85% 15%, color-mix(in srgb, var(--brand) 38%, transparent), transparent 70%),
+    radial-gradient(55% 45% at 10% 95%, color-mix(in srgb, var(--pulse) 26%, transparent), transparent 70%),
+    var(--bg);
+}
+.hero--estatico.hero--tom-escuro{
+  background:
+    radial-gradient(60% 50% at 85% 15%, color-mix(in srgb, var(--brand) 55%, transparent), transparent 70%),
+    radial-gradient(55% 45% at 10% 95%, color-mix(in srgb, var(--pulse) 30%, transparent), transparent 70%),
+    var(--surface-dark);
+}
+
+.fita{position:relative;z-index:2;overflow-x:clip;overflow-y:visible}
+.fita__faixa{background:var(--brand);color:var(--on-brand);padding-block:.9rem;overflow:hidden}
+.fita--inclinada{margin-block:-.6rem}
+.fita--inclinada .fita__faixa{transform:rotate(-2.5deg) scale(1.06)}
+.fita__trilho{display:flex;width:max-content;animation:fita-corre 32s linear infinite}
+.fita ul{display:flex;list-style:none;margin:0;padding:0}
+.fita li{
+  font-family:var(--f-display);font-size:clamp(1.35rem,1.1rem + 1vw,2rem);line-height:1;
+  white-space:nowrap;padding-inline:1.1rem;display:flex;align-items:center;gap:2.2rem;
+}
+.fita li::after{content:'✦';font-size:.6em;opacity:.7}
+@keyframes fita-corre{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){ .fita__trilho{animation:none} }
+
+.nums__lista{list-style:none;padding:0;margin-top:var(--sp-3);display:grid;gap:var(--sp-4)}
+.nums__item{display:flex;flex-direction:column;gap:.15rem}
+.nums__valor{
+  font-family:var(--f-display);line-height:.95;letter-spacing:-.03em;
+  font-size:clamp(2.6rem,1.6rem + 4vw,4.4rem);
+}
+.nums__rotulo{
+  font-size:var(--t-label);letter-spacing:var(--eyebrow-track);
+  text-transform:uppercase;color:var(--ink-dim);
+}
+.nums--faixa .nums__lista{grid-template-columns:repeat(auto-fit,minmax(min(100%,11rem),1fr))}
+
+/* O primeiro número ocupa a linha inteira e vira o elemento visual da seção. */
+.nums--gigante .nums__lista{grid-template-columns:repeat(auto-fit,minmax(min(100%,11rem),1fr))}
+.nums--gigante .nums__item:first-child{grid-column:1 / -1}
+.nums--gigante .nums__item:first-child .nums__valor{
+  font-size:clamp(4.5rem,2rem + 14vw,13rem);
+  color:var(--brand);
+}
+
+.manif__in{max-width:var(--wrap-narrow)}
+.manif--com-foto .manif__in,.manif--duas .manif__in{max-width:var(--wrap)}
+.manif__foto{margin-top:var(--sp-4);aspect-ratio:4/5;max-height:34rem}
+@media (min-width:64rem){
+  .manif--duas .manif__in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--sp-5);align-items:start}
+  .manif--duas .manif__citacao{position:sticky;top:7rem}
+  .manif--com-foto .manif__in{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);column-gap:var(--sp-5);align-items:center}
+  .manif--com-foto .manif__a,.manif--com-foto .manif__texto{grid-column:1}
+  .manif--com-foto .manif__foto{grid-column:2;grid-row:1 / span 2;margin-top:0;max-height:none}
+}
+.manif__citacao{margin:0 0 var(--sp-4);padding:0;border:0}
+.manif__citacao p{font-family:var(--f-display);font-size:var(--t-h2);line-height:var(--lh-display);letter-spacing:-.015em}
+.manif__citacao cite{display:block;margin-top:var(--sp-2);font-style:normal;font-size:var(--t-label);letter-spacing:var(--eyebrow-track);text-transform:uppercase;color:var(--pulse)}
+.manif--faixa .manif__citacao cite{color:var(--acento-escuro)}
+.manif__texto p{
+  font-family:var(--f-display);font-size:clamp(1.55rem,1.2rem + 1.6vw,2.4rem);
+  line-height:1.22;letter-spacing:-.015em;
+}
+.manif__texto p+p{margin-top:var(--sp-3)}
+.manif--faixa{background:var(--brand-2);color:var(--on-brand-2)}
+.manif--faixa .eyebrow{color:color-mix(in srgb, var(--on-brand-2) 60%, transparent)}
+
+.trat__lista{list-style:none;padding:0;margin-top:var(--sp-4);display:grid;gap:var(--sp-3)}
+.trat__item{
+  padding:var(--sp-3);border:1px solid var(--line);border-radius:var(--r-lg);
+  background:var(--bg-2);display:flex;flex-direction:column;gap:var(--sp-1);
+}
+.trat__nome{letter-spacing:-.01em}
+.trat__desc{color:var(--ink-soft);line-height:var(--lh-body)}
+.trat__metas{margin-top:auto;padding-top:var(--sp-2);display:flex;flex-wrap:wrap;gap:var(--sp-3)}
+.trat__meta{font-size:var(--t-sm);color:var(--ink-soft)}
+.trat__meta-r{
+  display:block;font-size:var(--t-label);letter-spacing:var(--eyebrow-track);
+  text-transform:uppercase;color:var(--ink-dim);
+}
+.trat--cartoes .trat__lista{grid-template-columns:repeat(auto-fit,minmax(min(100%,17rem),1fr))}
+.trat--lista .trat__item{border:none;border-top:1px solid var(--line);border-radius:0;background:none;padding-inline:0}
+.trat--lista .trat__lista{gap:0}
+
+/* Pilha: cartões grandes que grudam e empilham na rolagem (data-pilha,
+   motion.js). As cores alternam entre a marca e misturas claras dela; o
+   texto acompanha cada fundo. */
+.trat--pilha .trat__lista{gap:var(--sp-3)}
+.trat--pilha .trat__item{
+  min-height:15.5rem;padding:var(--sp-4) var(--sp-3);justify-content:flex-end;
+  border:0;box-shadow:0 -14px 34px -22px color-mix(in srgb, var(--ink) 45%, transparent);
+}
+.trat--pilha .trat__nome{font-size:clamp(1.6rem,1.3rem + 1.4vw,2.3rem);line-height:1.05}
+.trat--pilha .trat__item:nth-child(4n+1){background:var(--brand);color:var(--on-brand)}
+.trat--pilha .trat__item:nth-child(4n+2){background:color-mix(in srgb, var(--pulse) 30%, var(--bg-2))}
+.trat--pilha .trat__item:nth-child(4n+3){background:color-mix(in srgb, var(--brand) 18%, var(--bg-2))}
+.trat--pilha .trat__item:nth-child(4n+4){background:var(--brand-2);color:var(--on-brand-2)}
+.trat--pilha .trat__item:nth-child(4n+1) :is(.trat__desc,.trat__meta,.trat__meta-r){color:color-mix(in srgb, var(--on-brand) 76%, transparent)}
+.trat--pilha .trat__item:nth-child(4n+4) :is(.trat__desc,.trat__meta,.trat__meta-r){color:color-mix(in srgb, var(--on-brand-2) 76%, transparent)}
+@media (min-width:64rem){
+  .trat--pilha .trat__item{min-height:19rem;padding:var(--sp-5)}
+}
+
+/* Ícone do tratamento: no acento da marca, grande o bastante para virar o
+   desenho do cartão. Na pilha, em cartão escuro, herda a cor do texto. */
+.trat__ico{width:2.6rem;height:2.6rem;color:var(--pulse);margin-bottom:var(--sp-2)}
+.trat--pilha .trat__ico{width:2.6rem;height:2.6rem;color:inherit;opacity:.85}
+@media (min-width:64rem){
+  .trat--pilha .trat__ico{width:3.2rem;height:3.2rem;position:absolute;top:var(--sp-4);right:var(--sp-3);margin:0}
+}
+.trat__item:has(.trat__foto) .trat__ico{display:none}
+.trat--pilha .trat__item{position:relative}
+
+/* Desktop: na pilha, o título fica parado à esquerda enquanto os cartões
+   empilham à direita — a tela inteira trabalha, sem meia página vazia. */
+.trat__cabeca{max-width:var(--wrap-narrow)}
+@media (min-width:64rem){
+  .trat--pilha .trat__in{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:var(--sp-5);align-items:start}
+  .trat--pilha .trat__cabeca{position:sticky;top:7rem}
+  .trat--pilha .trat__lista{margin-top:0}
+}
+
+/* Foto do tratamento: no alto do cartão; na pilha do desktop, ocupa a metade
+   direita do cartão. */
+.trat__foto{aspect-ratio:4/3;margin:calc(var(--sp-3) * -1) calc(var(--sp-3) * -1) var(--sp-2);border-radius:var(--r-lg) var(--r-lg) 0 0}
+.trat--pilha .trat__foto{aspect-ratio:16/9;margin:0 0 var(--sp-2);border-radius:var(--r)}
+@media (min-width:64rem){
+  .trat--pilha .trat__item:has(.trat__foto){padding-right:calc(45% + var(--sp-4))}
+  .trat--pilha .trat__foto{position:absolute;top:0;right:0;bottom:0;width:45%;aspect-ratio:auto;margin:0;border-radius:0 var(--r-lg) var(--r-lg) 0}
+  .trat--pilha .trat__item:has(.trat__foto) .trat__ico{display:none}
+}
+
+/* Motivo da especialidade dentro do cartão, discreto no canto. */
+.trat__acento{position:absolute;right:var(--sp-3);bottom:var(--sp-3);width:4.5rem;opacity:.55;pointer-events:none}
+.trat__acento svg{width:100%;height:auto;display:block}
+.trat__item{position:relative}
+.trat__item:has(.trat__foto) .trat__acento{display:none}
+
+.trat--lista .trat__foto{margin-inline:0;border-radius:var(--r)}
+
+.passo__lista{list-style:none;padding:0;margin-top:var(--sp-4);display:grid;gap:var(--sp-4);counter-reset:passo}
+.passo__item{position:relative;padding-left:3.4rem}
+.passo__item::before{
+  content:attr(data-passo);
+  position:absolute;left:0;top:0;
+  display:grid;place-items:center;width:2.4rem;height:2.4rem;border-radius:50%;
+  border:1px solid var(--line-strong);
+  font-family:var(--f-display);color:var(--brand-2);
+}
+.passo__texto{color:var(--ink-soft);line-height:var(--lh-body);margin-top:.25rem}
+.passo--timeline .passo__item:not(:last-child)::after{
+  content:'';position:absolute;left:1.2rem;top:2.6rem;bottom:calc(var(--sp-4) * -1);
+  width:1px;background:var(--line);
+}
+.passo--numerados .passo__lista{grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr))}
+.passo--numerados .passo__item::after{display:none}
+
+/* Passo com ícone: o ícone ocupa o círculo do número. */
+.passo__item--ico::before{content:''}
+.passo__ico{position:absolute;left:.55rem;top:.55rem;width:1.3rem;height:1.3rem;color:var(--brand)}
+
+/* Desktop: a linha do tempo deita — passos lado a lado, ligados por um fio. */
+@media (min-width:64rem){
+  .passo--timeline .passo__lista{grid-auto-flow:column;grid-auto-columns:1fr;gap:var(--sp-4)}
+  .passo--timeline .passo__item{padding-left:0;padding-top:3.6rem}
+  .passo--timeline .passo__item:not(:last-child)::after{
+    left:3rem;right:calc(var(--sp-4) * -1 + .4rem);top:1.2rem;bottom:auto;width:auto;height:1px;
+  }
+}
+
+.faq__lista{margin-top:var(--sp-4);display:grid;gap:0}
+.faq__item{border-top:1px solid var(--line)}
+.faq__item:last-child{border-bottom:1px solid var(--line)}
+.faq__p{
+  cursor:pointer;list-style:none;padding-block:var(--sp-3);
+  font-family:var(--f-display);font-size:var(--t-h3);
+  display:flex;justify-content:space-between;gap:var(--sp-2);align-items:baseline;
+}
+.faq__p::-webkit-details-marker{display:none}
+.faq__p::after{content:'+';color:var(--pulse);font-size:1.4em;line-height:1}
+.faq__item[open] .faq__p::after{content:'–'}
+.faq__r{padding-bottom:var(--sp-3);color:var(--ink-soft);line-height:var(--lh-body);max-width:60ch}
+.faq--colunas .faq__lista{
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,20rem),1fr));
+  column-gap:var(--sp-4);
+}
+
+/* Desktop: título e convite para perguntar à esquerda, parados; perguntas à
+   direita. */
+.faq__in{max-width:var(--wrap)}
+.faq__outra{margin-top:var(--sp-3)}
+@media (min-width:64rem){
+  .faq__in{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:var(--sp-5);align-items:start}
+  .faq__cabeca{position:sticky;top:7rem}
+  .faq__in .faq__lista{margin-top:0}
+}
+
+.unid__lista{list-style:none;padding:0;margin-top:var(--sp-4);display:grid;gap:var(--sp-3)}
+.unid__item{padding:var(--sp-3);border:1px solid var(--line);border-radius:var(--r-lg);background:var(--bg-2)}
+.unid__bairro{margin-bottom:var(--sp-2)}
+.unid__dados{display:grid;gap:.35rem}
+.unid__linha{display:flex;gap:var(--sp-2);justify-content:space-between;align-items:baseline}
+.unid__linha dt{
+  font-size:var(--t-label);letter-spacing:var(--eyebrow-track);
+  text-transform:uppercase;color:var(--ink-dim);flex:none;
+}
+.unid__linha dd{text-align:right;color:var(--ink-soft)}
+.unid__cta{margin-top:var(--sp-4)}
+.unid--cartoes .unid__lista{grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr))}
+.unid--unica .unid__lista{max-width:var(--wrap-narrow)}
+
+/* Unidade única: cartão e painel lado a lado no desktop. O painel é a foto da
+   fachada ou, sem foto, um campo de marca com o bairro em corpo grande. */
+.unid__grade{display:grid;gap:var(--sp-3);margin-top:var(--sp-4)}
+.unid__grade .unid__lista{margin-top:0}
+.unid--unica .unid__lista{max-width:none}
+.unid__painel{
+  position:relative;overflow:hidden;border-radius:var(--r-lg);min-height:14rem;
+  background:var(--brand-2);color:var(--on-brand-2);padding:var(--sp-4);
+  display:flex;flex-direction:column;justify-content:flex-end;gap:var(--sp-2);
+}
+.unid__painel--foto{padding:0;background:var(--bg-2)}
+.unid__foto{position:absolute;inset:0;border-radius:inherit}
+.unid__ico{width:2.4rem;height:2.4rem;color:var(--acento-escuro)}
+.unid__lugar{font-family:var(--f-display);font-size:clamp(2rem,1.4rem + 2.4vw,3.4rem);line-height:1}
+.unid__acento{position:absolute;top:var(--sp-3);right:var(--sp-3);width:6rem;opacity:.5}
+.unid__acento svg{width:100%;height:auto;display:block}
+@media (min-width:64rem){
+  .unid--unica .unid__grade{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:stretch}
+  .unid__painel{min-height:20rem}
+}
+
+.cta{padding-block:var(--sp-4) var(--sp-5);text-align:center}
+.cta .eyebrow{justify-content:center}
+.cta .lead{margin-inline:auto;margin-top:var(--sp-2)}
+.cta__acao{margin-top:var(--sp-4)}
+.cta .btn .ico{margin-right:-.2rem}
+
+.cta--bloco-cheio{padding-block:var(--sp-5);background:var(--brand);color:var(--on-brand)}
+.cta--bloco-cheio .lead{color:inherit;opacity:.82}
+.cta--bloco-cheio .btn{background:var(--on-brand);color:var(--brand)}
+.cta--bloco-cheio .btn:hover{background:var(--on-brand);color:var(--brand-2)}
+
+.cta--faixa{background:var(--bg-2);border-block:1px solid var(--line)}
+
+.rodape{border-top:1px solid var(--line);padding-block:var(--sp-5) var(--sp-4);background:var(--bg-2)}
+.rodape__in{display:flex;flex-direction:column;gap:var(--sp-2)}
+.rodape__marca{font-family:var(--f-display);font-size:var(--t-h3)}
+.rodape__nav{display:flex;flex-wrap:wrap;gap:var(--sp-3);font-size:var(--t-sm)}
+.rodape__nav a{color:var(--ink-soft);text-decoration:none}
+.rodape__nav a:hover{color:var(--brand)}
+.rodape__aviso{max-width:64ch;color:var(--ink-dim)}
+.rodape__autoria{
+  margin-top:var(--sp-2);font-size:var(--t-label);letter-spacing:var(--eyebrow-track);
+  text-transform:uppercase;color:var(--ink-dim);
+}
+@media (min-width:56rem){
+  .rodape--assinatura .rodape__in{flex-direction:row;align-items:baseline;justify-content:space-between}
+  .rodape--assinatura .rodape__autoria{margin-top:0}
+}
+
+:root{--brand:#A16FAD;--brand-2:#3A2440;--ink:#3F3343;--bg:#FBF9FA;--r:2px;--f-display:'Poiret One',Georgia,serif;--f-body:'Jost',system-ui,sans-serif;--pulse:#1AAE88;--on-brand:#111111;--on-brand-2:#FFFFFF;--on-pulse:#111111;--acento-escuro:#1AAE88}</style>
+</head>
+<body class="no-js">
+<div class="mesh" aria-hidden="true">
+  <span class="mesh__b mesh__b--1"></span>
+  <span class="mesh__b mesh__b--2"></span>
+  <span class="mesh__b mesh__b--3"></span>
+</div>
+<header class="hd hd--sticky-cta">
+  <div class="wrap hd__in">
+    <a class="hd__marca" href="#topo"><img class="hd__logo" src="data:image/png;base64,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" alt="Lorens Estética Facial"></a>
+    <nav class="hd__nav"><a href="#tratamentos">Tratamentos</a><a href="#quiz">Quiz da pele</a><a href="#equipe">Quem atende</a><a href="#unidades">Onde fica</a></nav>
+    <a class="btn btn--ghost hd__cta" href="https://wa.me/5548999307730?text=Ol%C3%A1!%20Vim%20pelo%20site.">WhatsApp</a>
+  </div>
+</header>
+<section class="hero hero--split-motivo hero--tom-claro" id="topo">
+  
+  <div class="grao" aria-hidden="true">
+  <svg width="100%" height="100%" focusable="false">
+    <filter id="grao-f-1"><feTurbulence type="fractalNoise" baseFrequency="0.82" numOctaves="3" stitchTiles="stitch"/></filter>
+    <rect width="100%" height="100%" filter="url(#grao-f-1)"/>
+  </svg>
+</div>
+  <div class="hero__selo" aria-hidden="true"><svg viewBox="0 0 120 120"><defs><path id="hero-selo-circ" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs><text><textPath href="#hero-selo-circ">Pele · Rosto · Trindade · Desde 2017 ·  · </textPath></text></svg><span class="hero__selo-miolo">✦</span></div>
+  <div class="wrap hero__in">
+    <div class="hero__grid"><div class="hero__conteudo">
+    <p class="eyebrow" data-reveal>Estética facial · Trindade, Florianópolis</p>
+    <h1 data-reveal data-palavras style="--d:60ms">Primeiro a pele. Depois o tratamento.</h1>
+    <p class="lead" data-reveal style="--d:120ms">A Lorens cuida só do rosto: limpeza de pele por sucção, peelings, microagulhamento e toxina botulínica. Todo protocolo começa por uma avaliação com a fisioterapeuta dermatofuncional Lorena Lima.</p>
+    <div class="cluster hero__acoes" data-reveal style="--d:200ms">
+      <a class="btn" href="https://wa.me/5548999307730?text=Ol%C3%A1!%20Vim%20pelo%20site."><svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>Agendar avaliação</a>
+      <a class="btn btn--ghost" href="#tratamentos">Ver tratamentos</a>
+    </div>
+  </div><div class="hero__lado"><aside class="hero__card" data-reveal style="--d:280ms" data-tilt data-glow>
+    <p class="eyebrow">Agendamento</p>
+    <p class="hero__card-titulo">Agende pelo WhatsApp</p>
+    <a class="btn hero__card-cta" href="https://wa.me/5548999307730?text=Ol%C3%A1!%20Vim%20pelo%20site."><svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>Chamar no WhatsApp</a>
+    <dl class="hero__card-lista"><div class="hero__card-linha"><dt>Telefone</dt><dd>(48) 99930-7730</dd></div><div class="hero__card-linha"><dt>Endereço</dt><dd>Trindade · Florianópolis/SC</dd></div></dl>
+  </aside></div></div>
+  </div>
+  <div class="hero__arte" data-parallax="0.08"><svg class="camadas camadas--hero camadas--anima" viewBox="0 0 400 200" preserveAspectRatio="xMidYMax slice" role="presentation" aria-hidden="true" focusable="false"><path d="M 0 44.0 C 88 31.0, 152 57.0, 220.00000000000003 44.0 C 284 31.0, 348 57.0, 400 38.8 L 400 200 L 0 200 Z" style="--i:0"/><path d="M 0 70.0 C 88 58.6, 152 81.4, 220.00000000000003 70.0 C 284 58.6, 348 81.4, 400 65.4 L 400 200 L 0 200 Z" style="--i:1"/><path d="M 0 96.0 C 88 86.2, 152 105.8, 220.00000000000003 96.0 C 284 86.2, 348 105.8, 400 92.1 L 400 200 L 0 200 Z" style="--i:2"/><path d="M 0 122.0 C 88 113.8, 152 130.2, 220.00000000000003 122.0 C 284 113.8, 348 130.2, 400 118.7 L 400 200 L 0 200 Z" style="--i:3"/><path d="M 0 148.0 C 88 141.4, 152 154.6, 220.00000000000003 148.0 C 284 141.4, 348 154.6, 400 145.4 L 400 200 L 0 200 Z" style="--i:4"/></svg></div>
+</section>
+<div class="fita fita--inclinada" aria-hidden="true">
+  <div class="fita__faixa"><div class="fita__trilho"><ul><li>Limpeza de pele por sucção</li><li>Peeling de diamante</li><li>Peeling químico</li><li>Microagulhamento</li><li>Toxina botulínica</li><li>Bioestimulador de colágeno</li><li>Preenchimento labial</li><li>Harmonização facial</li></ul><ul><li>Limpeza de pele por sucção</li><li>Peeling de diamante</li><li>Peeling químico</li><li>Microagulhamento</li><li>Toxina botulínica</li><li>Bioestimulador de colágeno</li><li>Preenchimento labial</li><li>Harmonização facial</li></ul></div></div>
+</div>
+<section class="nums nums--faixa section" id="numeros">
+  <div class="wrap">
+    <p class="eyebrow" data-reveal>Quase dez anos de rosto, na mesma rua</p>
+    <ul class="nums__lista"><li class="nums__item" data-reveal style="--d:0ms">
+      <span class="nums__valor">4,9</span>
+      <span class="nums__rotulo">nota no Google</span>
+    </li><li class="nums__item" data-reveal style="--d:90ms">
+      <span class="nums__valor" data-count="206">206</span>
+      <span class="nums__rotulo">avaliações de clientes</span>
+    </li><li class="nums__item" data-reveal style="--d:180ms">
+      <span class="nums__valor">2017</span>
+      <span class="nums__rotulo">ano em que a Lorens abriu na Trindade</span>
+    </li><li class="nums__item" data-reveal style="--d:270ms">
+      <span class="nums__valor" data-count="8">8</span>
+      <span class="nums__rotulo">procedimentos, todos para o rosto</span>
+    </li><li class="nums__item" data-reveal style="--d:360ms">
+      <span class="nums__valor">22 mil</span>
+      <span class="nums__rotulo">pessoas acompanham a Lorens no Instagram</span>
+    </li></ul>
+  </div>
+</section>
+<section class="manif manif--faixa manif--duas section" id="manifesto">
+  <div class="wrap manif__in">
+    <div class="manif__a"><p class="eyebrow" data-reveal>Por que só o rosto</p><blockquote class="manif__citacao" data-reveal><p>Quem faz de tudo um pouco olha a pele de passagem. Aqui ela é o assunto inteiro da consulta.</p></blockquote></div>
+    <div class="manif__texto"><p data-acende>A Lorens abriu em 2017 com uma decisão que até hoje define a agenda: não ser salão, não ter cardápio de serviços para o corpo todo. Só estética facial e dermatofuncional.</p><p data-acende>Na prática, isso quer dizer que a mesma profissional avalia, monta o protocolo e acompanha o resultado. Pele oleosa, manchas de sol, linhas de expressão ou flacidez começam pela mesma pergunta: o que essa pele precisa agora.</p></div>
+    
+  </div>
+</section>
+<section class="trat trat--pilha section" id="tratamentos">
+  <div class="wrap trat__in">
+    <div class="trat__cabeca"><h2 data-reveal>Oito procedimentos, um assunto só</h2><p class="lead" data-reveal style="--d:80ms">A indicação sai da avaliação. Número de sessões e intervalo entre elas dependem da sua pele.</p></div>
+    <ul class="trat__lista" data-pilha><li class="trat__item">
+      <svg class="ico-saude trat__ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 7.5c3-2 6 2 9 0s6-2 9 0M3 12.5c3-2 6 2 9 0s6-2 9 0M3 17.5c3-2 6 2 9 0s6-2 9 0"/></svg><span class="trat__acento"><svg class="camadas camadas--accent" viewBox="0 0 400 200" preserveAspectRatio="xMidYMid meet" role="presentation" aria-hidden="true" focusable="false"><path d="M 0 44.0 C 88 31.0, 152 57.0, 220.00000000000003 44.0 C 284 31.0, 348 57.0, 400 38.8 L 400 200 L 0 200 Z"/></svg></span>
+      <h3 class="trat__nome">Limpeza de pele por sucção</h3>
+      <p class="trat__desc">Desobstrui os poros e tira cravos e impurezas com sucção mecânica. É o ponto de partida da maioria dos protocolos e o tratamento que dá nome à casa.</p>
+      
+    </li><li class="trat__item">
+      <svg class="ico-saude trat__ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg><span class="trat__acento"><svg class="camadas camadas--accent" viewBox="0 0 400 200" preserveAspectRatio="xMidYMid meet" role="presentation" aria-hidden="true" focusable="false"><path d="M 0 44.0 C 88 31.0, 152 57.0, 220.00000000000003 44.0 C 284 31.0, 348 57.0, 400 38.8 L 400 200 L 0 200 Z"/></svg></span>
+      <h3 class="trat__nome">Peeling de diamante</h3>
+      <p class="trat__desc">Esfoliação mecânica da camada mais superficial. Deixa a textura mais uniforme e a pele com mais viço.</p>
+      
+    </li><li class="trat__item">
+      <svg class="ico-saude trat__ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3s6.2 6.6 6.2 11.2a6.2 6.2 0 0 1-12.4 0C5.8 9.6 12 3 12 3z"/></svg><span class="trat__acento"><svg class="camadas camadas--accent" viewBox="0 0 400 200" preserveAspectRatio="xMidYMid meet" role="presentation" aria-hidden="true" focusable="false"><path d="M 0 44.0 C 88 31.0, 152 57.0, 220.00000000000003 44.0 C 284 31.0, 348 57.0, 400 38.8 L 400 200 L 0 200 Z"/></svg></span>
+      <h3 class="trat__nome">Peeling químico</h3>
+      <p class="trat__desc">Ácidos escolhidos para o seu caso aceleram a renovação da pele e tratam marcas, oleosidade e textura irregular.</p>
+      
+    </li><li class="trat__item">
+      <svg class="ico-saude trat__ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 2.5l3.5 3.5M19.8 4.2L9 15M14.3 5.5l4.2 4.2M9 15l-2.2 2.2M6.8 17.2l-3.3 3.3M11.2 8.6l1.8 1.8M8.6 11.2l1.8 1.8"/></svg><span class="trat__acento"><svg class="camadas camadas--accent" viewBox="0 0 400 200" preserveAspectRatio="xMidYMid meet" role="presentation" aria-hidden="true" focusable="false"><path d="M 0 44.0 C 88 31.0, 152 57.0, 220.00000000000003 44.0 C 284 31.0, 348 57.0, 400 38.8 L 400 200 L 0 200 Z"/></svg></span>
+      <h3 class="trat__nome">Microagulhamento</h3>
+      <p class="trat__desc">Com dermaroller ou dermapen, estimula colágeno para cicatriz de acne, poros dilatados e firmeza.</p>
+      
+    </li><li class="trat__item">
+      <svg class="ico-saude trat__ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M8.6 14.6s1.3 1.6 3.4 1.6 3.4-1.6 3.4-1.6M9 9.6h.01M15 9.6h.01"/></svg><span class="trat__acento"><svg class="camadas camadas--accent" viewBox="0 0 400 200" preserveAspectRatio="xMidYMid meet" role="presentation" aria-hidden="true" focusable="false"><path d="M 0 44.0 C 88 31.0, 152 57.0, 220.00000000000003 44.0 C 284 31.0, 348 57.0, 400 38.8 L 400 200 L 0 200 Z"/></svg></span>
+      <h3 class="trat__nome">Toxina botulínica</h3>
+      <p class="trat__desc">Suaviza linhas de expressão e, quando indicado, relaxa o masseter, o que alivia o apertar de dentes e afina o contorno.</p>
+      
+    </li><li class="trat__item">
+      <svg class="ico-saude trat__ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="6" cy="6.5" r="2.3"/><circle cx="18" cy="8.5" r="2.3"/><circle cx="10.5" cy="18" r="2.3"/><path d="M8.2 7.3l7.5 1.1M7.1 8.6l2.4 7.2M16.4 10.3l-4.4 6"/></svg><span class="trat__acento"><svg class="camadas camadas--accent" viewBox="0 0 400 200" preserveAspectRatio="xMidYMid meet" role="presentation" aria-hidden="true" focusable="false"><path d="M 0 44.0 C 88 31.0, 152 57.0, 220.00000000000003 44.0 C 284 31.0, 348 57.0, 400 38.8 L 400 200 L 0 200 Z"/></svg></span>
+      <h3 class="trat__nome">Bioestimulador de colágeno</h3>
+      <p class="trat__desc">Estimula o colágeno da própria pele ao longo dos meses. A firmeza vem aos poucos, sem mudar seus traços.</p>
+      
+    </li><li class="trat__item">
+      <svg class="ico-saude trat__ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="9" r="5"/><path d="M12 14v7.5M9 18h6"/></svg><span class="trat__acento"><svg class="camadas camadas--accent" viewBox="0 0 400 200" preserveAspectRatio="xMidYMid meet" role="presentation" aria-hidden="true" focusable="false"><path d="M 0 44.0 C 88 31.0, 152 57.0, 220.00000000000003 44.0 C 284 31.0, 348 57.0, 400 38.8 L 400 200 L 0 200 Z"/></svg></span>
+      <h3 class="trat__nome">Preenchimento labial</h3>
+      <p class="trat__desc">Ácido hialurônico para hidratar, contornar e equilibrar o volume dos lábios, com a quantidade definida na avaliação.</p>
+      
+    </li><li class="trat__item">
+      <svg class="ico-saude trat__ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4.5 12.5l4.8 4.8L19.5 7"/></svg><span class="trat__acento"><svg class="camadas camadas--accent" viewBox="0 0 400 200" preserveAspectRatio="xMidYMid meet" role="presentation" aria-hidden="true" focusable="false"><path d="M 0 44.0 C 88 31.0, 152 57.0, 220.00000000000003 44.0 C 284 31.0, 348 57.0, 400 38.8 L 400 200 L 0 200 Z"/></svg></span>
+      <h3 class="trat__nome">Harmonização facial</h3>
+      <p class="trat__desc">Pequenos ajustes de volume e contorno para equilibrar as proporções do rosto, planejados um a um.</p>
+      
+    </li></ul>
+  </div>
+</section>
+<section class="blk-quiz" id="quiz">
+  <div class="wrap blk-quiz__in">
+    <div class="blk-quiz__cab" data-reveal>
+      <p class="blk-quiz__eyebrow">SkinCareVIP · by Lorens</p>
+      <h2 class="blk-quiz__titulo">Antes de marcar, descubra que pele é a sua</h2>
+      <p class="blk-quiz__lead">Muita gente trata a pele que acha que tem. O quiz da Lorens são 22 perguntas em cinco partes, cerca de dez minutos, e no fim você recebe um dossiê com o seu tipo de pele e a rotina que faz sentido para ele.</p>
+      <a class="blk-quiz__cta" href="https://skincarevip.com.br/" target="_blank" rel="noopener">Fazer o quiz</a>
+    </div>
+    <ol class="blk-quiz__eixos">
+      <li data-reveal style="--d:0ms"><span class="blk-quiz__n">01</span><span class="blk-quiz__ic"><svg class="ico-saude" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3s6.2 6.6 6.2 11.2a6.2 6.2 0 0 1-12.4 0C5.8 9.6 12 3 12 3z"/></svg></span><strong>Oleosidade</strong><em>quanto e onde a pele brilha</em></li>
+      <li data-reveal style="--d:80ms"><span class="blk-quiz__n">02</span><span class="blk-quiz__ic"><svg class="ico-saude" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 19C5 10 10 5 20 4c-1 10-6 15-15 15zM5 19l8.5-8.5"/></svg></span><strong>Sensibilidade</strong><em>o que arde, o que avermelha</em></li>
+      <li data-reveal style="--d:160ms"><span class="blk-quiz__n">03</span><span class="blk-quiz__ic"><svg class="ico-saude" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/></svg></span><strong>Pigmentação</strong><em>manchas e marcas de sol</em></li>
+      <li data-reveal style="--d:240ms"><span class="blk-quiz__n">04</span><span class="blk-quiz__ic"><svg class="ico-saude" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M8.6 14.6s1.3 1.6 3.4 1.6 3.4-1.6 3.4-1.6M9 9.6h.01M15 9.6h.01"/></svg></span><strong>Rugas</strong><em>linhas finas e de expressão</em></li>
+      <li data-reveal style="--d:320ms"><span class="blk-quiz__n">05</span><span class="blk-quiz__ic"><svg class="ico-saude" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="6" cy="6.5" r="2.3"/><circle cx="18" cy="8.5" r="2.3"/><circle cx="10.5" cy="18" r="2.3"/><path d="M8.2 7.3l7.5 1.1M7.1 8.6l2.4 7.2M16.4 10.3l-4.4 6"/></svg></span><strong>Hidratação</strong><em>o que a pele retém ao longo do dia</em></li>
+    </ol>
+  </div>
+</section>
+
+<style>
+.blk-quiz{
+  padding-block:var(--sp-section);
+  background:color-mix(in srgb,var(--brand) 9%,var(--bg));
+}
+.blk-quiz__in{display:grid;gap:var(--sp-4);align-items:start}
+@media (min-width:64rem){
+  .blk-quiz__in{grid-template-columns:.95fr 1.05fr;gap:var(--sp-5);align-items:center}
+}
+.blk-quiz__eyebrow{
+  margin:0 0 var(--sp-2);font-family:var(--f-body);font-size:var(--t-label);
+  letter-spacing:var(--eyebrow-track);text-transform:uppercase;color:var(--pulse);
+}
+.blk-quiz__titulo{
+  margin:0;font-family:var(--f-display);font-size:var(--t-h2);
+  line-height:var(--lh-display);text-wrap:balance;color:var(--ink);
+}
+.blk-quiz__lead{margin:var(--sp-3) 0 0;max-width:34rem;color:color-mix(in srgb,var(--ink) 74%,transparent)}
+.blk-quiz__cta{
+  display:inline-block;margin-top:var(--sp-3);padding:.95em 1.6em;
+  background:var(--brand);border-radius:var(--radius);
+  font-family:var(--f-body);font-size:var(--t-label);letter-spacing:var(--eyebrow-track);
+  text-transform:uppercase;text-decoration:none;color:var(--bg);
+  transition:background .2s;
+}
+.blk-quiz__cta:hover{background:var(--brand-2)}
+.blk-quiz__eixos{list-style:none;margin:0;padding:0;display:grid;gap:var(--sp-2)}
+.blk-quiz__eixos li{
+  display:grid;grid-template-columns:auto auto 1fr;column-gap:var(--sp-2);align-items:center;
+  padding:var(--sp-2) var(--sp-3);
+  background:var(--bg);border-radius:var(--radius);
+  border:1px solid color-mix(in srgb,var(--brand) 22%,transparent);
+}
+.blk-quiz__n{font-family:var(--f-body);font-size:var(--t-label);letter-spacing:var(--eyebrow-track);color:color-mix(in srgb,var(--ink) 50%,transparent)}
+.blk-quiz__ic{display:inline-flex;width:2.2rem;height:2.2rem;color:var(--brand)}
+.blk-quiz__ic svg{width:100%;height:100%}
+.blk-quiz__eixos strong{font-family:var(--f-display);font-size:1.45em;font-weight:400;line-height:1.15;color:var(--ink)}
+.blk-quiz__eixos em{grid-column:3;font-style:normal;font-size:.92em;color:color-mix(in srgb,var(--ink) 64%,transparent)}
+</style>
+
+<section class="passo passo--timeline section" id="como-funciona">
+  <div class="wrap">
+    <h2 data-reveal>Como é a primeira vez</h2>
+    
+    <ol class="passo__lista"><li class="passo__item passo__item--ico" data-passo="1" data-reveal style="--d:0ms">
+      <svg class="ico-saude passo__ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l1.9-5.6A8.4 8.4 0 1 1 21 11.5z"/></svg>
+      <h3 class="passo__titulo">Você chama no WhatsApp</h3>
+      <p class="passo__texto">Conta o que incomoda e escolhe um horário. O atendimento é só com hora marcada.</p>
+    </li><li class="passo__item passo__item--ico" data-passo="2" data-reveal style="--d:80ms">
+      <svg class="ico-saude passo__ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
+      <h3 class="passo__titulo">Avaliação da pele</h3>
+      <p class="passo__texto">Antes de qualquer procedimento, a Lorena examina a pele e conversa sobre rotina, sol e histórico.</p>
+    </li><li class="passo__item passo__item--ico" data-passo="3" data-reveal style="--d:160ms">
+      <svg class="ico-saude passo__ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 6.5h16v14H4zM4 10.5h16M8.5 3.5v5M15.5 3.5v5M8 14.5h2M14 14.5h2M8 17.5h2"/></svg>
+      <h3 class="passo__titulo">Protocolo no papel</h3>
+      <p class="passo__texto">Você sai sabendo o que fazer, em que ordem e quantas sessões a sua pele pede.</p>
+    </li><li class="passo__item passo__item--ico" data-passo="4" data-reveal style="--d:240ms">
+      <svg class="ico-saude passo__ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4.5 12.5l4.8 4.8L19.5 7"/></svg>
+      <h3 class="passo__titulo">Sessões e retorno</h3>
+      <p class="passo__texto">Você volta no intervalo que o protocolo pede, e cada retorno parte do que a pele mostrou na sessão anterior.</p>
+    </li></ol>
+  </div>
+</section>
+<section class="blk-ciclo" id="ciclo">
+  <div class="wrap">
+    <div class="blk-ciclo__cab" data-reveal>
+      <p class="blk-ciclo__eyebrow">Toxina botulínica</p>
+      <h2 class="blk-ciclo__titulo">O efeito tem calendário. O retorno também.</h2>
+      <p class="blk-ciclo__lead" data-acende>A toxina não age no dia e não dura para sempre. Saber em que semana você está ajuda a marcar a próxima aplicação antes de o movimento voltar por inteiro.</p>
+    </div>
+    <ol class="blk-ciclo__marcos">
+      <li data-reveal style="--d:0ms"><span class="blk-ciclo__quando">Dia 0</span><strong>Aplicação</strong><p>Nada muda no espelho ainda. O efeito começa a aparecer aos poucos nos dias seguintes.</p></li>
+      <li data-reveal style="--d:100ms"><span class="blk-ciclo__quando">2 semanas</span><strong>Efeito no auge</strong><p>É quando o músculo está mais relaxado e a expressão fica mais contida.</p></li>
+      <li data-reveal style="--d:200ms"><span class="blk-ciclo__quando">4 a 8 semanas</span><strong>Melhor fase</strong><p>O rosto acomoda o resultado e o movimento fica natural.</p></li>
+      <li data-reveal style="--d:300ms"><span class="blk-ciclo__quando">~12 semanas</span><strong>Hora de voltar</strong><p>O efeito vai acabando aos poucos. É aqui que vale ter o retorno já agendado.</p></li>
+    </ol>
+  </div>
+</section>
+
+<style>
+.blk-ciclo{padding-block:var(--sp-section)}
+.blk-ciclo__cab{max-width:44rem}
+.blk-ciclo__eyebrow{
+  margin:0 0 var(--sp-2);font-family:var(--f-body);font-size:var(--t-label);
+  letter-spacing:var(--eyebrow-track);text-transform:uppercase;color:var(--brand-2);
+}
+.blk-ciclo__titulo{
+  margin:0;font-family:var(--f-display);font-size:var(--t-h2);
+  line-height:var(--lh-display);text-wrap:balance;color:var(--ink);
+}
+.blk-ciclo__lead{margin:var(--sp-3) 0 0;color:color-mix(in srgb,var(--ink) 74%,transparent)}
+.blk-ciclo__marcos{
+  list-style:none;margin:var(--sp-5) 0 0;padding:0;display:grid;gap:var(--sp-4);
+  counter-reset:marco;
+}
+@media (min-width:48rem){.blk-ciclo__marcos{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:64rem){.blk-ciclo__marcos{grid-template-columns:repeat(4,1fr);gap:var(--sp-4)}}
+.blk-ciclo__marcos li{
+  position:relative;padding-top:var(--sp-3);
+  border-top:2px solid color-mix(in srgb,var(--brand) 35%,transparent);
+}
+.blk-ciclo__marcos li::before{
+  content:"";position:absolute;top:-.45rem;left:0;width:.8rem;height:.8rem;border-radius:50%;
+  background:var(--brand);
+}
+.blk-ciclo__marcos li:last-child{border-top-color:var(--pulse)}
+.blk-ciclo__marcos li:last-child::before{background:var(--pulse)}
+.blk-ciclo__quando{
+  display:block;font-family:var(--f-body);font-size:var(--t-label);
+  letter-spacing:var(--eyebrow-track);text-transform:uppercase;color:color-mix(in srgb,var(--ink) 55%,transparent);
+}
+.blk-ciclo__marcos strong{
+  display:block;margin-top:var(--sp-1);font-family:var(--f-display);font-size:1.6em;font-weight:400;
+  line-height:1.15;color:var(--ink);
+}
+.blk-ciclo__marcos p{margin:var(--sp-1) 0 0;color:color-mix(in srgb,var(--ink) 70%,transparent)}
+</style>
+
+<section class="blk-lorena" id="equipe">
+  <div class="wrap blk-lorena__in">
+    <div class="blk-lorena__nome" data-reveal>
+      <p class="blk-lorena__eyebrow">Quem atende</p>
+      <h2 class="blk-lorena__titulo">Lorena Lima</h2>
+      <p class="blk-lorena__reg">Fisioterapeuta dermatofuncional · CREFITO 183075</p>
+    </div>
+    <div class="blk-lorena__texto" data-reveal style="--d:120ms">
+      <p data-acende>Fundou a Lorens em 2017 e segue à frente de cada protocolo. Quem faz a avaliação é quem aplica e quem acompanha o resultado nas sessões seguintes.</p>
+      <ul class="blk-lorena__lista">
+        <li><span class="blk-lorena__ic"><svg class="ico-saude" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span>Avalia a pele antes de indicar qualquer procedimento</li>
+        <li><span class="blk-lorena__ic"><svg class="ico-saude" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 13V5.6a1.5 1.5 0 0 1 3 0V11M11 10.6V4.1a1.5 1.5 0 0 1 3 0v6.5M14 10.6V5.8a1.5 1.5 0 0 1 3 0V13M17 13v-1.4a1.5 1.5 0 0 1 3 0V15a6 6 0 0 1-6 6h-1.2c-2 0-3.6-.9-4.9-2.5l-3.6-4.6a1.6 1.6 0 0 1 2.4-2.1L8 13.6"/></svg></span>Aplica os oito procedimentos da casa</li>
+        <li><span class="blk-lorena__ic"><svg class="ico-saude" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 6.5h16v14H4zM4 10.5h16M8.5 3.5v5M15.5 3.5v5M8 14.5h2M14 14.5h2M8 17.5h2"/></svg></span>Acompanha a pele de uma sessão para a outra</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+.blk-lorena{
+  padding-block:var(--sp-section);
+  border-top:1px solid color-mix(in srgb,var(--ink) 10%,transparent);
+}
+.blk-lorena__in{display:grid;gap:var(--sp-4);align-items:start}
+@media (min-width:64rem){
+  .blk-lorena__in{grid-template-columns:1fr 1fr;gap:var(--sp-5);align-items:center}
+}
+.blk-lorena__eyebrow{
+  margin:0 0 var(--sp-2);font-family:var(--f-body);font-size:var(--t-label);
+  letter-spacing:var(--eyebrow-track);text-transform:uppercase;color:var(--pulse);
+}
+.blk-lorena__titulo{
+  margin:0;font-family:var(--f-display);font-weight:400;
+  font-size:clamp(3rem,9vw,6.5rem);line-height:1;color:var(--brand);
+}
+.blk-lorena__reg{
+  margin:var(--sp-2) 0 0;font-family:var(--f-body);font-size:var(--t-label);
+  letter-spacing:var(--eyebrow-track);text-transform:uppercase;color:color-mix(in srgb,var(--ink) 62%,transparent);
+}
+.blk-lorena__texto > p{margin:0;font-size:1.15em;color:var(--ink)}
+.blk-lorena__lista{list-style:none;margin:var(--sp-3) 0 0;padding:0;display:grid}
+.blk-lorena__lista li{
+  display:flex;gap:var(--sp-2);align-items:center;padding-block:var(--sp-2);
+  border-top:1px solid color-mix(in srgb,var(--ink) 12%,transparent);
+  color:color-mix(in srgb,var(--ink) 74%,transparent);
+}
+.blk-lorena__lista li:last-child{border-bottom:1px solid color-mix(in srgb,var(--ink) 12%,transparent)}
+.blk-lorena__ic{flex:none;display:inline-flex;width:1.8rem;height:1.8rem;color:var(--brand)}
+.blk-lorena__ic svg{width:100%;height:100%}
+</style>
+
+<section class="faq faq--colunas section" id="faq">
+  <div class="wrap faq__in">
+    <div class="faq__cabeca"><h2 data-reveal>Antes de marcar</h2><p class="faq__outra" data-reveal><a class="btn btn--ghost" href="https://wa.me/5548999307730?text=Ol%C3%A1!%20Tenho%20uma%20d%C3%BAvida.">Outra dúvida? Pergunte no WhatsApp</a></p></div>
+    <div class="faq__lista"><details class="faq__item" data-reveal style="--d:0ms">
+      <summary class="faq__p">Preciso de avaliação antes do procedimento?</summary>
+      <div class="faq__r">Sim. Todo atendimento começa olhando a pele. É na avaliação que se decide o tratamento, o número de sessões e o intervalo entre elas.</div>
+    </details><details class="faq__item" data-reveal style="--d:50ms">
+      <summary class="faq__p">Limpeza de pele dói?</summary>
+      <div class="faq__r">A extração pode incomodar em áreas mais sensíveis, como nariz e queixo. A sucção mecânica deixa o processo mais rápido, e a sessão é ajustada ao que a sua pele aguenta.</div>
+    </details><details class="faq__item" data-reveal style="--d:100ms">
+      <summary class="faq__p">Quanto tempo dura o efeito da toxina?</summary>
+      <div class="faq__r">Em geral, a melhor fase vai de quatro a oito semanas depois da aplicação, e o efeito começa a acabar perto das doze semanas. Por isso vale marcar o retorno com antecedência.</div>
+    </details><details class="faq__item" data-reveal style="--d:150ms">
+      <summary class="faq__p">Quem faz os procedimentos?</summary>
+      <div class="faq__r">A Lorena Lima, fisioterapeuta dermatofuncional (CREFITO 183075), fundadora da clínica e responsável técnica por todos os protocolos.</div>
+    </details><details class="faq__item" data-reveal style="--d:200ms">
+      <summary class="faq__p">Atende sem hora marcada?</summary>
+      <div class="faq__r">Não. A agenda é organizada pelo WhatsApp, (48) 99930-7730, para cada pessoa ter o tempo que a avaliação pede.</div>
+    </details><details class="faq__item" data-reveal style="--d:250ms">
+      <summary class="faq__p">Onde fica a clínica?</summary>
+      <div class="faq__r">Na Rua Lauro Linhares, 728, sala 207, no Centro Executivo Monchique, na Trindade.</div>
+    </details></div>
+  </div>
+</section>
+<section class="unid unid--unica section" id="unidades">
+  <div class="wrap">
+    <h2 data-reveal>Na Trindade, na Lauro Linhares</h2>
+    <div class="unid__grade"><ul class="unid__lista"><li class="unid__item" data-reveal style="--d:0ms">
+      <h3 class="unid__bairro">Trindade · Florianópolis/SC</h3>
+      <dl class="unid__dados"><div class="unid__linha"><dt>Endereço</dt><dd>Rua Lauro Linhares, 728, sala 207 · Centro Executivo Monchique</dd></div><div class="unid__linha"><dt>Telefone</dt><dd>(48) 99930-7730</dd></div><div class="unid__linha"><dt>Horário</dt><dd>Com hora marcada pelo WhatsApp</dd></div></dl>
+    </li></ul><div class="unid__painel" data-reveal><svg class="ico-saude unid__ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21.5s-7-6.1-7-11.5a7 7 0 0 1 14 0c0 5.4-7 11.5-7 11.5z"/><circle cx="12" cy="10" r="2.5"/></svg><p class="unid__lugar">Trindade · Florianópolis/SC</p><span class="unid__acento"><svg class="camadas camadas--accent" viewBox="0 0 400 200" preserveAspectRatio="xMidYMid meet" role="presentation" aria-hidden="true" focusable="false"><path d="M 0 44.0 C 88 31.0, 152 57.0, 220.00000000000003 44.0 C 284 31.0, 348 57.0, 400 38.8 L 400 200 L 0 200 Z"/></svg></span></div></div>
+    <p class="unid__cta">
+      <a class="btn" href="https://wa.me/5548999307730?text=Ol%C3%A1!%20Vim%20pelo%20site.">Combinar um horário</a>
+    </p>
+  </div>
+</section>
+<section class="cta cta--bloco-cheio" id="contato" data-glow>
+  <div class="wrap wrap--narrow" data-reveal>
+    
+    <h2>Conte o que está incomodando na sua pele</h2>
+    <p class="lead">A primeira conversa é pelo WhatsApp. Dali sai o horário da sua avaliação.</p>
+    <p class="cta__acao"><a class="btn" href="https://wa.me/5548999307730?text=Ol%C3%A1!%20Vim%20pelo%20site."><svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>Chamar a Lorens</a></p>
+  </div>
+</section>
+<footer class="rodape rodape--assinatura">
+  <div class="wrap rodape__in">
+    <p class="rodape__marca">Lorens Estética Facial · 2026</p>
+    <nav class="rodape__nav"><a href="https://www.instagram.com/lorensestetica/">Instagram</a><a href="https://skincarevip.com.br/">Quiz da pele</a></nav>
+    
+    <p class="rodape__autoria">Proposta · Conexxio</p>
+  </div>
+</footer>
+<div class="barra-zap"><a class="btn" href="https://wa.me/5548999307730?text=Ol%C3%A1!%20Vim%20pelo%20site."><svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>Agendar avaliação</a></div>
+<script>/* Sistema de movimento do kit. Roda em toda proposta.
+   Só transform e opacity — tudo no compositor, nada de layout. */
+;(() => {
+  const doc = document
+  const corpo = doc.body
+  corpo.classList.remove('no-js')
+  corpo.classList.add('js')
+
+  // Quebra o texto de um elemento em <span class="classe"> por palavra,
+  // devolvendo os espaços como nós de texto: o textContent final é idêntico
+  // ao original, e leitor de tela lê a frase inteira.
+  const quebrar = (el, classe) => {
+    const partes = el.textContent.split(/(\s+)/)
+    el.textContent = ''
+    const spans = []
+    for (const parte of partes) {
+      if (!parte) continue
+      if (/^\s+$/.test(parte)) {
+        el.append(parte)
+        continue
+      }
+      const s = doc.createElement('span')
+      s.className = classe
+      s.style.setProperty('--i', spans.length)
+      s.textContent = parte
+      el.append(s)
+      spans.push(s)
+    }
+    return spans
+  }
+
+  const limitar = (v) => Math.min(1, Math.max(0, v))
+
+  // A troca de classe acima é síncrona e imediata — precisa acontecer antes
+  // de qualquer coisa, inclusive do early-return sob movimento reduzido. O
+  // resto (todo o querySelectorAll de atributos data-*) espera o documento
+  // terminar de parsear: o script é sempre o último nó do <body>, então
+  // qualquer conteúdo real de seção já existe nesse ponto de qualquer jeito;
+  // esperar só garante que isso vale mesmo quando o body é montado de forma
+  // incremental (como em teste, via injeção após o próprio <script>).
+  const iniciar = () => {
+    const parado = matchMedia('(prefers-reduced-motion: reduce)').matches
+
+    /* Texto que acende palavra por palavra conforme a rolagem. Parado, já
+       nasce todo aceso. */
+    const acendiveis = [...doc.querySelectorAll('[data-acende]')].map((el) => ({
+      el,
+      palavras: quebrar(el, 'p'),
+    }))
+
+    /* Barra de WhatsApp do celular: aparece depois do hero, some quando o
+       bloco de contato está na tela. É função, não enfeite — roda também
+       com movimento reduzido (o CSS só tira a transição). */
+    const barra = doc.querySelector('.barra-zap')
+    const topo = doc.getElementById('topo')
+    const contato = doc.getElementById('contato')
+
+    const pilhas = [...doc.querySelectorAll('[data-pilha]')].map((el) => {
+      const cartoes = [...el.children]
+      cartoes.forEach((c, n) => c.style.setProperty('--n', n))
+      return cartoes
+    })
+
+    let pendente = false
+    const quadro = () => {
+      pendente = false
+      const h = innerHeight
+      if (barra) {
+        let on = topo ? topo.getBoundingClientRect().bottom < h * 0.4 : scrollY > h * 0.6
+        if (contato) on = on && contato.getBoundingClientRect().top > h * 0.95
+        barra.classList.toggle('on', on)
+      }
+      if (parado) return
+      // No fim da página não há mais rolagem para acender o resto: o que
+      // estiver na tela acende inteiro.
+      const fim = scrollY + h >= doc.documentElement.scrollHeight - 4
+      for (const { el, palavras } of acendiveis) {
+        const r = el.getBoundingClientRect()
+        const prog = fim && r.top < h ? 1 : limitar((h * 0.85 - r.top) / (r.height + h * 0.35))
+        const acesas = Math.ceil(prog * palavras.length)
+        palavras.forEach((p, i) => p.classList.toggle('on', i < acesas))
+      }
+      for (const cartoes of pilhas) {
+        cartoes.forEach((c, i) => {
+          const prox = cartoes[i + 1]
+          if (!prox) return
+          const d = prox.getBoundingClientRect().top - c.getBoundingClientRect().top
+          const k = limitar(1 - d / c.offsetHeight)
+          c.style.transform = k ? `scale(${(1 - k * 0.06).toFixed(3)})` : ''
+          c.style.filter = k ? `brightness(${(1 - k * 0.15).toFixed(3)})` : ''
+        })
+      }
+    }
+    if (barra || acendiveis.length || pilhas.length) {
+      addEventListener(
+        'scroll',
+        () => {
+          if (pendente) return
+          pendente = true
+          requestAnimationFrame(quadro)
+        },
+        { passive: true },
+      )
+      addEventListener('resize', quadro, { passive: true })
+      quadro()
+    }
+
+    if (parado) {
+      doc.querySelectorAll('[data-reveal],[data-revela]').forEach((el) => el.classList.add('is-in'))
+      for (const { palavras } of acendiveis) palavras.forEach((p) => p.classList.add('on'))
+      return
+    }
+
+    /* Título que sobe palavra por palavra. */
+    doc.querySelectorAll('[data-palavras]').forEach((el) => quebrar(el, 'w'))
+
+    /* Reveal por scroll. */
+    const obs = new IntersectionObserver(
+      (entradas) => {
+        for (const e of entradas) {
+          if (!e.isIntersecting) continue
+          e.target.classList.add('is-in')
+          obs.unobserve(e.target)
+        }
+      },
+      { rootMargin: '0px 0px -12% 0px', threshold: 0.08 },
+    )
+    doc.querySelectorAll('[data-reveal],[data-revela]').forEach((el) => obs.observe(el))
+
+    /* Contadores. O texto final já está no HTML — a contagem é enfeite por
+       cima, nunca a fonte do número. */
+    const fmt = new Intl.NumberFormat('pt-BR')
+    const contar = (el) => {
+      const alvo = Number(el.dataset.count)
+      if (!Number.isFinite(alvo)) return
+      const final = el.textContent
+      const dur = 1400
+      const t0 = performance.now()
+      const passo = (t) => {
+        const p = Math.min(1, (t - t0) / dur)
+        const eased = 1 - Math.pow(1 - p, 3)
+        if (p < 1) {
+          el.textContent = fmt.format(Math.round(alvo * eased))
+          requestAnimationFrame(passo)
+        } else {
+          el.textContent = final
+        }
+      }
+      requestAnimationFrame(passo)
+    }
+    const obsCount = new IntersectionObserver(
+      (entradas) => {
+        for (const e of entradas) {
+          if (!e.isIntersecting) continue
+          contar(e.target)
+          obsCount.unobserve(e.target)
+        }
+      },
+      { threshold: 0.6 },
+    )
+    doc.querySelectorAll('[data-count]').forEach((el) => obsCount.observe(el))
+
+    /* Parallax. */
+    const camadas = [...doc.querySelectorAll('[data-parallax]')]
+    if (camadas.length) {
+      let pendenteP = false
+      const mover = () => {
+        pendenteP = false
+        const meio = innerHeight / 2
+        for (const el of camadas) {
+          const r = el.getBoundingClientRect()
+          const d = (r.top + r.height / 2 - meio) * Number(el.dataset.parallax || 0.2)
+          el.style.transform = `translate3d(0, ${(-d).toFixed(1)}px, 0)`
+        }
+      }
+      addEventListener(
+        'scroll',
+        () => {
+          if (pendenteP) return
+          pendenteP = true
+          requestAnimationFrame(mover)
+        },
+        { passive: true },
+      )
+      mover()
+    }
+
+    /* Tilt e brilho seguem o ponteiro — só existem onde há ponteiro de
+       verdade. No toque, o wow vem da rolagem, não daqui. */
+    if (!matchMedia('(hover: hover)').matches) return
+
+    doc.querySelectorAll('[data-tilt]').forEach((el) => {
+      el.addEventListener('pointermove', (ev) => {
+        const r = el.getBoundingClientRect()
+        const x = (ev.clientX - r.left) / r.width - 0.5
+        const y = (ev.clientY - r.top) / r.height - 0.5
+        el.style.transform = `perspective(900px) rotateX(${(-y * 6).toFixed(2)}deg) rotateY(${(x * 6).toFixed(2)}deg)`
+      })
+      el.addEventListener('pointerleave', () => {
+        el.style.transform = ''
+      })
+    })
+
+    doc.querySelectorAll('[data-glow]').forEach((el) => {
+      el.addEventListener('pointermove', (ev) => {
+        const r = el.getBoundingClientRect()
+        el.style.setProperty('--gx', `${ev.clientX - r.left}px`)
+        el.style.setProperty('--gy', `${ev.clientY - r.top}px`)
+      })
+    })
+  }
+
+  if (doc.readyState === 'loading') {
+    doc.addEventListener('DOMContentLoaded', iniciar)
+  } else {
+    iniciar()
+  }
+})()
+
+</script>
+</body>
+</html>
